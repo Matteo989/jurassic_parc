@@ -21,8 +21,8 @@ public class Mithra extends Kaiju implements Omnivorous, Flying {
 		//ajouter une envergure (span)
 		this.weight = 40000;
 		this.age = 5000;
-		hanger = false;
-		tiredness = false;
+		angry = false;
+		tired = false;
 		health = true;		
 	} //Contructeur privé pour le singleton 
 	
@@ -33,7 +33,15 @@ public class Mithra extends Kaiju implements Omnivorous, Flying {
 
 	@Override
 	public void eatEverything() {
-		System.out.println("Je mange de tout");
+		if(!this.tired && this.isAngry()) {
+			System.out.println("Je mange de tout");
+			this.setAngry(false);
+			System.out.println("J'ai bien mangé");
+			this.setTired(true);
+		} else if (this.tired) {
+			System.out.println("Je suis endormi");
+		} else {
+			System.out.println("Je n'ai pas faim");
+		}
 	}
-
 }

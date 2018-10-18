@@ -20,8 +20,8 @@ public final class Godzilla extends Kaiju implements Omnivorous, Terrestrial, Ma
 		this.height = 110; 
 		this.weight = 90000;
 		this.age = 0;
-		hanger = false;
-		tiredness = false;
+		angry = false;
+		tired = false;
 		health = true;
 	} //Contructeur privé pour le singleton 
 	
@@ -34,10 +34,18 @@ public final class Godzilla extends Kaiju implements Omnivorous, Terrestrial, Ma
 	public void walk() {
 		System.out.println("Je marche");
 	}
-	
 
 	@Override
 	public void eatEverything() {
-		System.out.println("Je mange de tout");			
+		if(!this.tired && this.isAngry()) {
+			System.out.println("Je mange de tout");
+			this.setAngry(false);
+			System.out.println("J'ai bien mangé");
+			this.setTired(true);
+		} else if (this.tired) {
+			System.out.println("Je suis endormi");
+		} else {
+			System.out.println("Je n'ai pas faim");
+		}
 	}
 }

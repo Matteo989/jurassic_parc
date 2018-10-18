@@ -8,9 +8,9 @@ public class Corythosaure extends Dinosaur implements Herbivorous, Terrestrial {
 	
 
 
-	public Corythosaure(String name, boolean sex, double height, double weight, int age, boolean hanger,
-			boolean tiredness, boolean health) {
-		super(name, sex, height, weight, age, hanger, tiredness, health);
+	public Corythosaure(String name, boolean sex, double height, double weight, int age, boolean angry,
+			boolean tired, boolean health) {
+		super(name, sex, height, weight, age, angry, tired, health);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -21,7 +21,15 @@ public class Corythosaure extends Dinosaur implements Herbivorous, Terrestrial {
 
 	@Override
 	public void eatVegetables() {
-		System.out.println("Je mange de l'herbe (et je parle pas de cannabis mdr");			
+		if(!this.tired && this.isAngry()) {
+			System.out.println("Je mange de l'herbe (et je ne parle pas de cannabis mdr)");
+			this.setAngry(false);
+			System.out.println("J'ai bien mangé");
+			this.setTired(true);
+		} else if (this.tired) {
+			System.out.println("Je suis endormi");
+		} else {
+			System.out.println("Je n'ai pas faim");
+		}
 	}
-
 }

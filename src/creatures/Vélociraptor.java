@@ -19,7 +19,15 @@ public class Vélociraptor extends Dinosaur implements Carnivorous, Terrestrial 
 
 	@Override
 	public void eatMeat() {
-		System.out.println("Je mange de la viande");
+		if(!this.tired && this.isAngry()) {
+			System.out.println("Je mange de la viande");
+			this.setAngry(false);
+			System.out.println("J'ai bien mangé");
+			this.setTired(true);
+		} else if (this.tired) {
+			System.out.println("Je suis endormi");
+		} else {
+			System.out.println("Je n'ai pas faim");
+		}
 	}
-
 }

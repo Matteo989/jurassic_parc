@@ -1,5 +1,5 @@
 package regimealimentaire;
 
 public interface Omnivorous {
-	public void eatEverything();
+    public void eatEverything();
 }

@@ -20,12 +20,30 @@ public class Ptéranodon extends Dinosaur implements Carnivorous, Piscivorous, F
 
 	@Override
 	public void eatFish() {
-		System.out.println("Je mange du poisson");
+		if(!this.tired && this.isAngry()) {
+			System.out.println("Je mange du poisson");
+			this.setAngry(false);
+			System.out.println("J'ai bien mangé");
+			this.setTired(true);
+		} else if (this.tired) {
+			System.out.println("Je suis endormi");
+		} else {
+			System.out.println("Je n'ai pas faim");
+		}
 	}
 
 	@Override
 	public void eatMeat() {
-		System.out.println("Je mange de la viande");
+		if(!this.tired && this.isAngry()) {
+			System.out.println("Je mange de la viande");
+			this.setAngry(false);
+			System.out.println("J'ai bien mangé");
+			this.setTired(true);
+		} else if (this.tired) {
+			System.out.println("Je suis endormi");
+		} else {
+			System.out.println("Je n'ai pas faim");
+		}
 	}
 
 }

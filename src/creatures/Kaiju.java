@@ -9,15 +9,15 @@ public abstract class Kaiju {
 	public double height;
 	public double weight;
 	public int age;
-	public boolean hanger;
-	public boolean tiredness;
+	public boolean angry;
+	public boolean tired;
 	public boolean health;
 	
 	public Kaiju() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Kaiju(String name, boolean sex, double height, double weight, int age, boolean hanger, boolean tiredness,
+	public Kaiju(String name, boolean sex, double height, double weight, int age, boolean angry, boolean tired,
 			boolean health) {
 		super();
 		this.name = name;
@@ -25,8 +25,8 @@ public abstract class Kaiju {
 		this.height = height;
 		this.weight = weight;
 		this.age = age;
-		this.hanger = hanger;
-		this.tiredness = tiredness;
+		this.angry = angry;
+		this.tired = tired;
 		this.health = health;
 	}
 	
@@ -61,19 +61,19 @@ public abstract class Kaiju {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	public boolean getHanger() {
-		return hanger;
+	public boolean isAngry() {
+		return angry;
 	}
-	public void setHanger(boolean hanger) {
-		this.hanger = hanger;
+	public void setAngry(boolean angry) {
+		this.angry = angry;
 	}
-	public boolean getTiredness() {
-		return tiredness;
+	public boolean isTired() {
+		return tired;
 	}
-	public void setTiredness(boolean tiredness) {
-		this.tiredness = tiredness;
+	public void setTired(boolean tired) {
+		this.tired = tired;
 	}
-	public boolean getHealth() {
+	public boolean isHealth() {
 		return health;
 	}
 	public void setSanté(boolean health) {

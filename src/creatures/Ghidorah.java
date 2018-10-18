@@ -22,8 +22,8 @@ public class Ghidorah extends Kaiju implements Omnivorous, Flying, Terrestrial {
 		this.weight = 70000;
 		//ajouter une envergure (span)
 		this.age = 10000;
-		hanger = false;
-		tiredness = false;
+		angry = false;
+		tired = false;
 		health = true;
 		
 	} //Contructeur privé pour le singleton 
@@ -40,7 +40,15 @@ public class Ghidorah extends Kaiju implements Omnivorous, Flying, Terrestrial {
 
 	@Override
 	public void eatEverything() {
-		System.out.println("Je mange de tout");		
+		if(!this.tired && this.isAngry()) {
+			System.out.println("Je mange de tout");
+			this.setAngry(false);
+			System.out.println("J'ai bien mangé");
+			this.setTired(true);
+		} else if (this.tired) {
+			System.out.println("Je suis endormi");
+		} else {
+			System.out.println("Je n'ai pas faim");
+		}
 	}
-
 }

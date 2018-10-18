@@ -5,45 +5,42 @@ import regimealimentaire.*;
 
 public abstract class Dinosaur {
 	public String name;
-	public boolean sex;
-	public double height;
-	public double weight;
+	public boolean sex;   // 1 = male, 0 = female
+	public double height; // en cm
+	public double weight; // en kilos
 	public int age;
-	public boolean hanger;
-	public boolean tiredness;
-	public boolean health;
-	
-	
-	
-	
-	public Dinosaur(String name, boolean sex, double height, double weight, int age, boolean hanger, boolean tiredness,
-			boolean health) {
+	public boolean angry; // 1 = faim , 0 = pas faim
+	public boolean tired;
+	public boolean health; // 1 = ok , 0 = pas bon
+
+
+	public Dinosaur(String name, boolean sex, double height, double weight, int age, boolean angry, boolean tired,
+					boolean health) {
 		super();
 		this.name = name;
 		this.sex = sex;
 		this.height = height;
 		this.weight = weight;
 		this.age = age;
-		this.hanger = hanger;
-		this.tiredness = tiredness;
+		this.angry = angry;
+		this.tired = tired;
 		this.health = health;
-	}
-
-	public void eat(Dinosaur dinosaure) {
-		if(this.tiredness == false ) {
-			this.hanger = false; 
-		}else 
-			System.out.println("Je suis endormis");
 	}
 	
 	public void makeNoise() {
 		System.out.println("WHEN I SAY ANGER, YOU SAY FIST, ANGER FIST, ANGER FIST !");
 	}
 	
-	public void getDinosaurState(Dinosaur dinosaure) {
-		System.out.println("Le " + dinosaure.getName() + "a faim ?" + dinosaure.isHanger());
-		System.out.println("Le " + dinosaure.getName() + "est en bonne santé ?" + dinosaure.isHealth());
-		System.out.println("Le " + dinosaure.getName() + "est fatigué ?" + dinosaure.isTiredness());
+	public void getDinosaurState() {
+		if (this.isAngry()) {
+			System.out.println("Le " + this.getName() + " a faim.");
+		} else {
+			System.out.println("Le " + this.getName() + " n'a pas faim.");
+		}
+
+		//a refaire les deux suivants
+		System.out.println("Le " + this.getName() + " est en bonne santé ? " + this.isHealth());
+		System.out.println("Le " + this.getName() + " est fatigué ? " + this.isTired());
 	}
 
 	
@@ -88,20 +85,20 @@ public abstract class Dinosaur {
 		this.age = age;
 	}
 
-	public boolean isHanger() {
-		return hanger;
+	public boolean isAngry() {
+		return angry;
 	}
 
-	public void setHanger(boolean hanger) {
-		this.hanger = hanger;
+	public void setAngry(boolean angry) {
+		this.angry = angry;
 	}
 
-	public boolean isTiredness() {
-		return tiredness;
+	public boolean isTired() {
+		return tired;
 	}
 
-	public void setTiredness(boolean tiredness) {
-		this.tiredness = tiredness;
+	public void setTired(boolean tired) {
+		this.tired = tired;
 	}
 
 	public boolean isHealth() {
