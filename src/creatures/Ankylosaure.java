@@ -6,7 +6,7 @@ import typedinosaure.*;
 public class Ankylosaure extends Dinosaur implements Herbivorous, Terrestrial {
 
 
-
+    
 	public Ankylosaure(String name, boolean sex, double height, double weight, int age, boolean hanger,
 			boolean tiredness, boolean health) {
 		super(name, sex, height, weight, age, hanger, tiredness, health);
