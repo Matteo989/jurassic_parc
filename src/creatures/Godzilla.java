@@ -27,25 +27,25 @@ public final class Godzilla extends Kaiju implements Omnivorous, Terrestrial, Ma
 	
 	@Override
 	public void nager() {
-		System.out.println("Je nage");
+		System.out.println("Godzilla nage");
 	}
 
 	@Override
 	public void walk() {
-		System.out.println("Je marche");
+		System.out.println("Godzilla marche");
 	}
 
 	@Override
 	public void eatEverything() {
 		if(!this.tired && this.isAngry()) {
-			System.out.println("Je mange de tout");
+			System.out.println("Godzilla mange de tout");
 			this.setAngry(false);
-			System.out.println("J'ai bien mangé");
+			System.out.println("Godzilla a bien mangé");
 			this.setTired(true);
 		} else if (this.tired) {
-			System.out.println("Je suis endormi");
+			System.out.println("Godzilla est endormi");
 		} else {
-			System.out.println("Je n'ai pas faim");
+			System.out.println("Godzilla n'a pas faim");
 		}
 	}
 }

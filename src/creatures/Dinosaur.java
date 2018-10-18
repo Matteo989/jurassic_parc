@@ -33,14 +33,22 @@ public abstract class Dinosaur {
 	
 	public void getDinosaurState() {
 		if (this.isAngry()) {
-			System.out.println("Le " + this.getName() + " a faim.");
+			System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " a faim.");
 		} else {
-			System.out.println("Le " + this.getName() + " n'a pas faim.");
+			System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " n'a pas faim.");
 		}
 
-		//a refaire les deux suivants
-		System.out.println("Le " + this.getName() + " est en bonne santé ? " + this.isHealth());
-		System.out.println("Le " + this.getName() + " est fatigué ? " + this.isTired());
+		if (this.isHealth()) {
+			System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " est en bonne santé.");
+		} else {
+			System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " est malade.");
+		}
+
+		if (this.isTired()) {
+			System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " est fatigué.");
+		} else {
+			System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " n'est pas fatigué.");
+		}
 	}
 
 	
@@ -108,10 +116,23 @@ public abstract class Dinosaur {
 	public void setHealth(boolean health) {
 		this.health = health;
 	}
-	
-	
-	
-	
 
-	
+	public String getType() {
+		return this.getClass().getName().substring(10);
+	}
+
+	@Override
+	public String toString() {
+		return "Dinosaur{" +
+				"type='" + this.getType() + '\'' +
+				", name='" + name + '\'' +
+				", sex=" + sex +
+				", height=" + height +
+				", weight=" + weight +
+				", age=" + age +
+				", angry=" + angry +
+				", tired=" + tired +
+				", health=" + health +
+				'}';
+	}
 }
