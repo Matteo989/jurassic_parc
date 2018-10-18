@@ -12,41 +12,41 @@ public class Spinosaure extends Dinosaur implements Carnivorous, Piscivorous, Ma
 		// TODO Auto-generated constructor stub
 	}
 
+
 	@Override
 	public void walk() {
-		System.out.println("Je marche");
+		System.out.println(this.name + " le " + this.getType().toLowerCase() + " marche");
 	}
 
 	@Override
 	public void nager() {
-		System.out.println("Je nage");
+		System.out.println(this.name + " le " + this.getType().toLowerCase() + " nage");
 	}
 
 	@Override
 	public void eatFish() {
 		if(!this.tired && this.isAngry()) {
-			System.out.println("Je mange du poisson");
+			System.out.println(this.name + " le " + this.getType().toLowerCase() + " mange du poisson");
 			this.setAngry(false);
-			System.out.println("J'ai bien mangé");
+			System.out.println(this.name + " le " + this.getType().toLowerCase() + " a bien mangé");
 			this.setTired(true);
 		} else if (this.tired) {
-			System.out.println("Je suis endormi");
+			System.out.println(this.name + " le " + this.getType().toLowerCase() + " est endormi");
 		} else {
-			System.out.println("Je n'ai pas faim");
+			System.out.println(this.name + " le " + this.getType().toLowerCase() + " n'a pas faim");
 		}
 	}
 
 	@Override
 	public void eatMeat() {
 		if(!this.tired && this.isAngry()) {
-			System.out.println("Je mange de la viande");
+			System.out.println(this.name + " le " + this.getType().toLowerCase() + " mange de la viande");
 			this.setAngry(false);
-			System.out.println("J'ai bien mangé");
-			this.setTired(true);
+			System.out.println(this.name + " le " + this.getType().toLowerCase() + " a bien mangé");
 		} else if (this.tired) {
-			System.out.println("Je suis endormi");
+			System.out.println(this.name + " le " + this.getType().toLowerCase() + " est endormi et ne peut pas manger.");
 		} else {
-			System.out.println("Je n'ai pas faim");
+			System.out.println(this.name + " le " + this.getType().toLowerCase() + " n'a pas faim");
 		}
 	}
 }

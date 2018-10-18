@@ -57,7 +57,7 @@ public class Archipel {
         this.nbEnclosActual = nbEnclosActual;
     }
 
-    
+
 
     public static void main(String[] args) {
         Tyrannosaure Marc = new Tyrannosaure("Marc", true, 500, 10000, 10, true, false, true);
@@ -71,11 +71,13 @@ public class Archipel {
         Godzilla.getGodzilla();
         getGodzilla().nager();
         getGodzilla().walk();
+        System.out.println(getGodzilla().getType()); // return Godzilla
 
         Diplodocus Neiko = new Diplodocus("Neiko", true, 3, 8, 1, false, true, true);
         System.out.println(Neiko.toString());
         Neiko.walk();
         Neiko.getDinosaurState();
+        Neiko.eatVegetables();
 
     }
 }

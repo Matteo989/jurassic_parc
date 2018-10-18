@@ -15,20 +15,19 @@ public class Diplodocus extends Dinosaur implements Herbivorous, Terrestrial {
 
     @Override
     public void walk() {
-        System.out.println("Je marche");
+        System.out.println(this.name + " le " + this.getType().toLowerCase() + " marche");
     }
 
     @Override
     public void eatVegetables() {
         if(!this.tired && this.isAngry()) {
-            System.out.println("Je mange de l'herbe (et je ne parle pas de cannabis mdr)");
+            System.out.println(this.name + " le " + this.getType().toLowerCase() + " mange de l'herbe (et je ne parle pas de cannabis mdr)");
             this.setAngry(false);
-            System.out.println("J'ai bien mangé");
-            this.setTired(true);
+            System.out.println(this.name + " le " + this.getType().toLowerCase() + " a bien mangé");
         } else if (this.tired) {
-            System.out.println("Je suis endormi");
+            System.out.println(this.name + " le " + this.getType().toLowerCase() + " est endormi et ne peut pas manger.");
         } else {
-            System.out.println("Je n'ai pas faim");
+            System.out.println(this.name + " le " + this.getType().toLowerCase() + " n'a pas faim");
         }
     }
 }

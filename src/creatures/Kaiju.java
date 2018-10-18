@@ -79,5 +79,9 @@ public abstract class Kaiju {
 	public void setSanté(boolean health) {
 		this.health = health;
 	}
+
+	public String getType() {
+		return this.getClass().getName().substring(10);
+	}
 	
 }

@@ -16,20 +16,20 @@ public class Cératosaure extends Dinosaur implements Carnivorous, Terrestrial {
 
 	@Override
 	public void walk() {
-		System.out.println("Je marche");		
+		System.out.println(this.name + " le " + this.getType().toLowerCase() + " marche");
 	}
 
 	@Override
 	public void eatMeat() {
 		if(!this.tired && this.isAngry()) {
-			System.out.println("Je mange de la viande");
+			System.out.println(this.name + " le " + this.getType().toLowerCase() + " mange de la viande");
 			this.setAngry(false);
-			System.out.println("J'ai bien mangé");
+			System.out.println(this.name + " le " + this.getType().toLowerCase() + " a bien mangé");
 			this.setTired(true);
 		} else if (this.tired) {
-			System.out.println("Je suis endormi");
+			System.out.println(this.name + " le " + this.getType().toLowerCase() + " est endormi");
 		} else {
-			System.out.println("Je n'ai pas faim");
+			System.out.println(this.name + " le " + this.getType().toLowerCase() + " n'a pas faim");
 		}
 	}
 

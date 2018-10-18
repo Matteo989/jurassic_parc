@@ -30,25 +30,25 @@ public class Ghidorah extends Kaiju implements Omnivorous, Flying, Terrestrial {
 	
 	@Override
 	public void walk() {
-		System.out.println("Je marche");
+		System.out.println(this.name + " le " + this.getType().toLowerCase() + " marche");
 	}
 
 	@Override
 	public void fly() {
-		System.out.println("Je vole");
+		System.out.println(this.name + " le " + this.getType().toLowerCase() + " vole");
 	}
 
 	@Override
 	public void eatEverything() {
 		if(!this.tired && this.isAngry()) {
-			System.out.println("Je mange de tout");
+			System.out.println(this.name + " le " + this.getType().toLowerCase() + " mange de tout");
 			this.setAngry(false);
-			System.out.println("J'ai bien mangé");
+			System.out.println(this.name + " le " + this.getType().toLowerCase() + " a bien mangé");
 			this.setTired(true);
 		} else if (this.tired) {
-			System.out.println("Je suis endormi");
+			System.out.println(this.name + " le " + this.getType().toLowerCase() + " est endormi");
 		} else {
-			System.out.println("Je n'ai pas faim");
+			System.out.println(this.name + " le " + this.getType().toLowerCase() + " n'a pas faim");
 		}
 	}
 }
