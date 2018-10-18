@@ -58,8 +58,31 @@ public class Archipel {
     }
 
 
+    // non fini
+    public void nbAnimals() {
+        int nbAnimals = 0;
+        for(int i = 0; i <= getNbEnclosActual(); i++)
+        {
+            nbAnimals += getAnimals();
+        }
+    }
+
+    public void nbAnimalsByIsland() {
+        int nbAnimals = 0;
+        for(int i = 0; i <= getNbEnclosActual(); i++)
+        {
+            System.out.println(island.getName() + " = " + island.getNbAnimals());
+        }
+    }
+
 
     public static void main(String[] args) {
+        //À intervalle régulier, cette  méthode doit :
+        //modifier aléatoirement l’état de certains animaux (les rendre malades, les endormir, etc.)
+        //modifier aléatoirement l’état de certains enclos (leur propreté, leur salinité, etc.)
+        //passer la main à l'employé (et donc à l’utilisateur) pour qu'il s'occupe du zoo
+        // (son nombre d’action par intervalle de temps devant être limité)
+
         Tyrannosaure Marc = new Tyrannosaure("Marc", true, 500, 10000, 10, true, false, true);
         System.out.println(Marc.toString());
         Marc.getDinosaurState();
