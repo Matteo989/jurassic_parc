@@ -4,7 +4,7 @@ import regimealimentaire.*;
 
 public class Compsognathus extends Dinosaur implements Carnivorous, Terrestrial{
 
-	
+	// tout petit qui vit en meutes
 
 	
 	public Compsognathus(String name, boolean sex, double height, double weight, int age, boolean angry,
