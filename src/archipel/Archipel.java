@@ -58,22 +58,22 @@ public class Archipel {
     }
 
 
-    // non fini
-    public void nbAnimals() {
-        int nbAnimals = 0;
-        for(int i = 0; i <= getNbEnclosActual(); i++)
-        {
-            nbAnimals += getAnimals();
-        }
-    }
-
-    public void nbAnimalsByIsland() {
-        int nbAnimals = 0;
-        for(int i = 0; i <= getNbEnclosActual(); i++)
-        {
-            System.out.println(island.getName() + " = " + island.getNbAnimals());
-        }
-    }
+//    // non fini
+//    public void nbAnimals() {
+//        int nbAnimals = 0;
+//        for(int i = 0; i <= getNbEnclosActual(); i++)
+//        {
+//            nbAnimals += getAnimals();
+//        }
+//    }
+//
+//    public void nbAnimalsByIsland() {
+//        int nbAnimals = 0;
+//        for(int i = 0; i <= getNbEnclosActual(); i++)
+//        {
+//            System.out.println(island.getName() + " = " + island.getNbAnimals());
+//        }
+//    }
 
 
     public static void main(String[] args) {

@@ -43,7 +43,7 @@ public final class Godzilla extends Kaiju implements Omnivorous, Terrestrial, Ma
 			System.out.println("Godzilla a bien mangé");
 			this.setTired(true);
 		} else if (this.tired) {
-			System.out.println("Godzilla est endormi");
+			System.out.println("Godzilla est endormi et ne peut pas manger.");
 		} else {
 			System.out.println("Godzilla n'a pas faim");
 		}

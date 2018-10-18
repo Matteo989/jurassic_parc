@@ -40,7 +40,7 @@ public class Rodan extends Kaiju implements Omnivorous, Flying{
 			System.out.println(this.name + " le " + this.getType().toLowerCase() + " a bien mangé");
 			this.setTired(true);
 		} else if (this.tired) {
-			System.out.println(this.name + " le " + this.getType().toLowerCase() + " est endormi");
+			System.out.println(this.name + " le " + this.getType().toLowerCase() + " est endormi et ne peut pas manger.");
 		} else {
 			System.out.println(this.name + " le " + this.getType().toLowerCase() + " n'a pas faim");
 		}

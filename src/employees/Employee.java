@@ -13,11 +13,11 @@ public class Employee {
 
     }
 
-    public void feedAnimals(Island island) {
-        //boucle for pour tous les nourrir
-    }
-
-    public void moveAnimal(Island pastIsland, Island newIsland) {
-        
-    }
+//    public void feedAnimals(Island island) {
+//        //boucle for pour tous les nourrir
+//    }
+//
+//    public void moveAnimal(Island pastIsland, Island newIsland) {
+//
+//    }
 }
