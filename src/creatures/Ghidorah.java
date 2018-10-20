@@ -3,7 +3,7 @@ package creatures;
 import regimealimentaire.*;
 import typedinosaure.*;
 
-public class Ghidorah extends Kaiju implements Omnivorous, Flying, Terrestrial {
+public class Ghidorah extends Kaiju implements Flying, Terrestrial {
 
 	
 	private static volatile Ghidorah ghidorah = null; //volatile pour gérer les thread
@@ -36,19 +36,5 @@ public class Ghidorah extends Kaiju implements Omnivorous, Flying, Terrestrial {
 	@Override
 	public void fly() {
 		System.out.println(this.name + " le " + this.getType().toLowerCase() + " vole");
-	}
-
-	@Override
-	public void eatEverything() {
-		if(!this.tired && this.isAngry()) {
-			System.out.println(this.name + " le " + this.getType().toLowerCase() + " mange de tout");
-			this.setAngry(false);
-			System.out.println(this.name + " le " + this.getType().toLowerCase() + " a bien mangé");
-			this.setTired(true);
-		} else if (this.tired) {
-			System.out.println(this.name + " le " + this.getType().toLowerCase() + " est endormi et ne peut pas manger.");
-		} else {
-			System.out.println(this.name + " le " + this.getType().toLowerCase() + " n'a pas faim");
-		}
 	}
 }

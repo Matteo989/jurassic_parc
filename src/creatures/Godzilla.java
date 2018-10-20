@@ -3,7 +3,7 @@ package creatures;
 import typedinosaure.*;
 import regimealimentaire.*;
 
-public final class Godzilla extends Kaiju implements Omnivorous, Terrestrial, Marine{
+public final class Godzilla extends Kaiju implements Terrestrial, Marine{
 
 	private static volatile Godzilla godzilla = null; //volatile pour gérer les thread
 	
@@ -33,19 +33,5 @@ public final class Godzilla extends Kaiju implements Omnivorous, Terrestrial, Ma
 	@Override
 	public void walk() {
 		System.out.println("Godzilla marche");
-	}
-
-	@Override
-	public void eatEverything() {
-		if(!this.tired && this.isAngry()) {
-			System.out.println("Godzilla mange de tout");
-			this.setAngry(false);
-			System.out.println("Godzilla a bien mangé");
-			this.setTired(true);
-		} else if (this.tired) {
-			System.out.println("Godzilla est endormi et ne peut pas manger.");
-		} else {
-			System.out.println("Godzilla n'a pas faim");
-		}
 	}
 }

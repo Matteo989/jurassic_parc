@@ -3,7 +3,7 @@ package creatures;
 import typedinosaure.*;
 import regimealimentaire.*;
 
-public class Ptéranodon extends Dinosaur implements Carnivorous, Piscivorous, Flying{
+public class Ptéranodon extends Omnivorous implements Flying{
 
 	
 
@@ -19,29 +19,16 @@ public class Ptéranodon extends Dinosaur implements Carnivorous, Piscivorous, F
 	}
 
 	@Override
-	public void eatFish() {
+	public void eatEverything() {
 		if(!this.tired && this.isAngry()) {
-			System.out.println(this.name + " le " + this.getType().toLowerCase() + " mange du poisson");
+			System.out.println(this.name + " le " + this.getType().toLowerCase() + " mange du poisson et de la viande.");
 			this.setAngry(false);
-			System.out.println(this.name + " le " + this.getType().toLowerCase() + " a bien mangé");
+			System.out.println(this.name + " le " + this.getType().toLowerCase() + " a bien mangé.");
 			this.setTired(true);
 		} else if (this.tired) {
-			System.out.println(this.name + " le " + this.getType().toLowerCase() + " est endormi");
+			System.out.println(this.name + " le " + this.getType().toLowerCase() + " est endormi.");
 		} else {
-			System.out.println(this.name + " le " + this.getType().toLowerCase() + " n'a pas faim");
-		}
-	}
-
-	@Override
-	public void eatMeat() {
-		if(!this.tired && this.isAngry()) {
-			System.out.println(this.name + " le " + this.getType().toLowerCase() + " mange de la viande");
-			this.setAngry(false);
-			System.out.println(this.name + " le " + this.getType().toLowerCase() + " a bien mangé");
-		} else if (this.tired) {
-			System.out.println(this.name + " le " + this.getType().toLowerCase() + " est endormi et ne peut pas manger.");
-		} else {
-			System.out.println(this.name + " le " + this.getType().toLowerCase() + " n'a pas faim");
+			System.out.println(this.name + " le " + this.getType().toLowerCase() + " n'a pas faim.");
 		}
 	}
 

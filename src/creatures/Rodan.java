@@ -3,7 +3,7 @@ package creatures;
 import regimealimentaire.*;
 import typedinosaure.*;
 
-public class Rodan extends Kaiju implements Omnivorous, Flying{
+public class Rodan extends Kaiju implements Flying{
 
 	private static volatile Rodan rodan = null; //volatile pour gérer les thread
 	
@@ -31,19 +31,4 @@ public class Rodan extends Kaiju implements Omnivorous, Flying{
 	public void fly() {
 		System.out.println(this.name + " le " + this.getType().toLowerCase() + " vole");
 	}
-
-	@Override
-	public void eatEverything() {
-		if(!this.tired && this.isAngry()) {
-			System.out.println(this.name + " le " + this.getType().toLowerCase() + " mange de tout");
-			this.setAngry(false);
-			System.out.println(this.name + " le " + this.getType().toLowerCase() + " a bien mangé");
-			this.setTired(true);
-		} else if (this.tired) {
-			System.out.println(this.name + " le " + this.getType().toLowerCase() + " est endormi et ne peut pas manger.");
-		} else {
-			System.out.println(this.name + " le " + this.getType().toLowerCase() + " n'a pas faim");
-		}
-	}
-
 }

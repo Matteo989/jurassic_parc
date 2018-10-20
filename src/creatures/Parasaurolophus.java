@@ -3,7 +3,7 @@ package creatures;
 import typedinosaure.*;
 import regimealimentaire.*;
 	
-public class Parasaurolophus extends Dinosaur implements Herbivorous, Terrestrial {
+public class Parasaurolophus extends Herbivorous implements Terrestrial {
 
 
 
@@ -16,18 +16,5 @@ public class Parasaurolophus extends Dinosaur implements Herbivorous, Terrestria
 	@Override
 	public void walk() {
 		System.out.println(this.name + " le " + this.getType().toLowerCase() + " marche");
-	}
-
-	@Override
-	public void eatVegetables() {
-		if(!this.tired && this.isAngry()) {
-			System.out.println(this.name + " le " + this.getType().toLowerCase() + " mange de l'herbe (et je ne parle pas de cannabis mdr)");
-			this.setAngry(false);
-			System.out.println(this.name + " le " + this.getType().toLowerCase() + " a bien mangé");
-		} else if (this.tired) {
-			System.out.println(this.name + " le " + this.getType().toLowerCase() + " est endormi et ne peut pas manger.");
-		} else {
-			System.out.println(this.name + " le " + this.getType().toLowerCase() + " n'a pas faim");
-		}
 	}
 }

@@ -3,7 +3,7 @@ package creatures;
 import regimealimentaire.*;
 import typedinosaure.*;
 
-public class Mithra extends Kaiju implements Omnivorous, Flying {
+public class Mithra extends Kaiju implements Flying {
 
 	private static volatile Mithra mithra = null; //volatile pour gérer les thread
 	
@@ -29,19 +29,5 @@ public class Mithra extends Kaiju implements Omnivorous, Flying {
 	@Override
 	public void fly() {
 		System.out.println(this.name + " le " + this.getType().toLowerCase() + " nage");
-	}
-
-	@Override
-	public void eatEverything() {
-		if(!this.tired && this.isAngry()) {
-			System.out.println(this.name + " le " + this.getType().toLowerCase() + " mange de tout");
-			this.setAngry(false);
-			System.out.println(this.name + " le " + this.getType().toLowerCase() + " a bien mangé");
-			this.setTired(true);
-		} else if (this.tired) {
-			System.out.println(this.name + " le " + this.getType().toLowerCase() + " est endormi et ne peut pas manger.");
-		} else {
-			System.out.println(this.name + " le " + this.getType().toLowerCase() + " n'a pas faim");
-		}
 	}
 }
