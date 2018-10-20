@@ -9,20 +9,20 @@ import static creatures.Godzilla.getGodzilla;
 public class Archipel {
     // un archipel est un amas d'îles, îles qui sont nos enclos pour le projet.
     // Une île pour godzilla (peut etre radioactive), une île pour les kaiju,
-    // et une île principale pour tous les dinausaures avec un enclos pour les herbivores,
-    // un enclos pour chaque sorte de carnivores et omnivores,
+    // une île pour tous les herbivores,
+    // un île pour chaque sorte de carnivores et omnivores,
     // une volière pour les pterodactyl et un bassin pour les dino marins.
 
     public String name;
     public String employee = "Mickael";
-    public double nbEnclosMax;
-    public double nbEnclosActual;
+    public double nbIleMax;
+    public double nbIleActual;
 
-    public Archipel(String name, String employee, double nbEnclosMax, double nbEnclosActual) {
+    public Archipel(String name, String employee, double nbIleMax, double nbIleActual) {
         this.name = name;
         this.employee = employee;
-        this.nbEnclosMax = nbEnclosMax;
-        this.nbEnclosActual = nbEnclosActual;
+        this.nbIleMax = nbIleMax;
+        this.nbIleActual = nbIleActual;
     }
 
     public String getName() {
@@ -41,27 +41,27 @@ public class Archipel {
         this.employee = employee;
     }
 
-    public double getNbEnclosMax() {
-        return nbEnclosMax;
+    public double getnbIleMax() {
+        return nbIleMax;
     }
 
-    public void setNbEnclosMax(double nbEnclosMax) {
-        this.nbEnclosMax = nbEnclosMax;
+    public void setnbIleMax(double nbIleMax) {
+        this.nbIleMax = nbIleMax;
     }
 
-    public double getNbEnclosActual() {
-        return nbEnclosActual;
+    public double getnbIleActual() {
+        return nbIleActual;
     }
 
-    public void setNbEnclosActual(double nbEnclosActual) {
-        this.nbEnclosActual = nbEnclosActual;
+    public void setnbIleActual(double nbIleActual) {
+        this.nbIleActual = nbIleActual;
     }
 
 
 //    // non fini
 //    public void nbAnimals() {
 //        int nbAnimals = 0;
-//        for(int i = 0; i <= getNbEnclosActual(); i++)
+//        for(int i = 0; i <= getnbIleActual(); i++)
 //        {
 //            nbAnimals += getAnimals();
 //        }
@@ -69,7 +69,7 @@ public class Archipel {
 //
 //    public void nbAnimalsByIsland() {
 //        int nbAnimals = 0;
-//        for(int i = 0; i <= getNbEnclosActual(); i++)
+//        for(int i = 0; i <= getnbIleActual(); i++)
 //        {
 //            System.out.println(island.getName() + " = " + island.getNbAnimals());
 //        }

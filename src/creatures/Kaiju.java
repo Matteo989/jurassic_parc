@@ -3,15 +3,7 @@ package creatures;
 import regimealimentaire.*;
 import typedinosaure.*;
 
-public abstract class Kaiju {
-	public String name;
-	public boolean sex;
-	public double height;
-	public double weight;
-	public int age;
-	public boolean angry;
-	public boolean tired;
-	public boolean health;
+public abstract class Kaiju extends Creatures {
 	
 	public Kaiju() {
 		// TODO Auto-generated constructor stub
@@ -28,60 +20,6 @@ public abstract class Kaiju {
 		this.angry = angry;
 		this.tired = tired;
 		this.health = health;
-	}
-	
-	
-	public String getName() {
-		return name;
-	}
-	public void setNom(String name) {
-		this.name = name;
-	}
-	public boolean isSex() {
-		return sex;
-	}
-	public void setSex(boolean sex) {
-		this.sex = sex;
-	}
-	public double getHeight() {
-		return height;
-	}
-	public void setTaille(double height) {
-		this.height = height;
-	}
-	public double getWeight() {
-		return weight;
-	}
-	public void setPoids(double weight) {
-		this.weight = weight;
-	}
-	public int getAge() {
-		return age;
-	}
-	public void setAge(int age) {
-		this.age = age;
-	}
-	public boolean isAngry() {
-		return angry;
-	}
-	public void setAngry(boolean angry) {
-		this.angry = angry;
-	}
-	public boolean isTired() {
-		return tired;
-	}
-	public void setTired(boolean tired) {
-		this.tired = tired;
-	}
-	public boolean isHealth() {
-		return health;
-	}
-	public void setSanté(boolean health) {
-		this.health = health;
-	}
-
-	public String getType() {
-		return this.getClass().getSimpleName();
 	}
 
 	public void eatEverything() {

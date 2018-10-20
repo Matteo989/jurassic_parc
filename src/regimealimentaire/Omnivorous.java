@@ -13,7 +13,7 @@ public abstract class Omnivorous extends Dinosaur {
 
     public void eatEverything() {
         if(!this.tired && this.isAngry()) {
-            System.out.println(this.name + " le " + this.getType().toLowerCase() + " mange du poisson et de la viande.");
+            System.out.println(this.name + " le " + this.getType().toLowerCase() + " mange de tout.");
             this.setAngry(false);
             System.out.println(this.name + " le " + this.getType().toLowerCase() + " a bien mangé.");
             this.setTired(true);
