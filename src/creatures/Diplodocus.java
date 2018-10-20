@@ -5,7 +5,8 @@ import regimealimentaire.*;
 
 public class Diplodocus extends Herbivorous implements Terrestrial {
 
-
+    public Diplodocus() {
+    }
 
     public Diplodocus(String name, boolean sex, double height, double weight, int age, boolean angry,
                         boolean tired, boolean health) {

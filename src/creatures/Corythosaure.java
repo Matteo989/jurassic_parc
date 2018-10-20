@@ -5,8 +5,8 @@ import regimealimentaire.*;
 
 public class Corythosaure extends Herbivorous implements Terrestrial {
 
-	
-
+	public Corythosaure() {
+	}
 
 	public Corythosaure(String name, boolean sex, double height, double weight, int age, boolean angry,
 			boolean tired, boolean health) {
