@@ -1,4 +1,4 @@
 package islands;
 
-public class KaijuIsland {
+public class KaijuIsland<Kaiju> extends Island {
 }

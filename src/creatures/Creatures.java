@@ -6,7 +6,7 @@ public abstract class Creatures {
     public double height; // en cm
     public double weight; // en kilos
     public int age;
-    public boolean angry; // 1 = faim , 0 = pas faim
+    public boolean hungry; // 1 = faim , 0 = pas faim
     public boolean tired;
     public boolean health; // 1 = ok , 0 = pas bon
 
@@ -19,7 +19,7 @@ public abstract class Creatures {
         this.height = height;
         this.weight = weight;
         this.age = age;
-        this.angry = angry;
+        this.hungry = angry;
         this.tired = tired;
         this.health = health;
     }
@@ -65,11 +65,11 @@ public abstract class Creatures {
     }
 
     public boolean isAngry() {
-        return angry;
+        return hungry;
     }
 
     public void setAngry(boolean angry) {
-        this.angry = angry;
+        this.hungry = angry;
     }
 
     public boolean isTired() {
@@ -105,7 +105,7 @@ public abstract class Creatures {
                 ", height=" + height +
                 ", weight=" + weight +
                 ", age=" + age +
-                ", angry=" + angry +
+                ", angry=" + hungry +
                 ", tired=" + tired +
                 ", health=" + health +
                 '}';

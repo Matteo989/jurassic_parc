@@ -55,6 +55,7 @@ public abstract class Enclos {
 			animal.toString();
 		}
 	}
+
 	public void addAnimal(Animal animal) {
 		this.animaux.add(animal);
 	}
@@ -70,6 +71,7 @@ public abstract class Enclos {
 			this.propreté = "Bon";
 		}
 	}
+
 	@Override
 	public String toString() {
 		return "Enclos [nom=" + nom + ", superficie=" + superficie + ", animauxMax=" + animauxMax + ", nbAnimaux="
