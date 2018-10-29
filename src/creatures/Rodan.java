@@ -21,7 +21,7 @@ public class Rodan extends Kaiju implements Flying{
 		this.weight = 60000;
 		//ajouter une envergure (span)
 		this.age = 8000;
-		angry = false;
+		hungry = false;
 		tired = false;
 		health = true;
 	} //Contructeur privé pour le singleton 

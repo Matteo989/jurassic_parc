@@ -22,7 +22,7 @@ public class Ghidorah extends Kaiju implements Flying, Terrestrial {
 		this.weight = 70000;
 		//ajouter une envergure (span)
 		this.age = 10000;
-		angry = false;
+		hungry = false;
 		tired = false;
 		health = true;
 		

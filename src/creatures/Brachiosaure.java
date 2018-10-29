@@ -8,9 +8,9 @@ public class Brachiosaure extends Herbivorous implements Terrestrial {
 	public Brachiosaure() {
 	}
 
-	public Brachiosaure(String name, boolean sex, double height, double weight, int age, boolean angry,
+	public Brachiosaure(String name, boolean sex, double height, double weight, int age, boolean hungry,
 						boolean tired, boolean health) {
-		super(name, sex, height, weight, age, angry, tired, health);
+		super(name, sex, height, weight, age, hungry, tired, health);
 		// TODO Auto-generated constructor stub
 	}
 

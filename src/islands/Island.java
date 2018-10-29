@@ -30,7 +30,7 @@ public abstract class Island<T>{
 
     public void feedCreatures(){
         for(T creature:creatures) {
-            creature.hungry = false;
+            creature.setHungry(false);
         }
     }
 

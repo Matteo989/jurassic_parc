@@ -8,7 +8,7 @@ public abstract class Dinosaur extends Creatures {
     public Dinosaur() {
     }
 
-    public Dinosaur(String name, boolean sex, double height, double weight, int age, boolean angry, boolean tired,
+    public Dinosaur(String name, boolean sex, double height, double weight, int age, boolean hungry, boolean tired,
                     boolean health) {
         super();
         this.name = name;
@@ -16,7 +16,7 @@ public abstract class Dinosaur extends Creatures {
         this.height = height;
         this.weight = weight;
         this.age = age;
-        this.angry = angry;
+        this.hungry = hungry;
         this.tired = tired;
         this.health = health;
     }
@@ -26,7 +26,7 @@ public abstract class Dinosaur extends Creatures {
     }
 
     public void getDinosaurState() {
-        if (this.isAngry()) {
+        if (this.isHungry()) {
             System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " a faim.");
         } else {
             System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " n'a pas faim.");

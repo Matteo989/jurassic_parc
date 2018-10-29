@@ -13,13 +13,13 @@ public abstract class Creatures {
     public Creatures() {
     }
 
-    public Creatures(String name, boolean sex, double height, double weight, int age, boolean angry, boolean tired, boolean health) {
+    public Creatures(String name, boolean sex, double height, double weight, int age, boolean hungry, boolean tired, boolean health) {
         this.name = name;
         this.sex = sex;
         this.height = height;
         this.weight = weight;
         this.age = age;
-        this.hungry = angry;
+        this.hungry = hungry;
         this.tired = tired;
         this.health = health;
     }
@@ -64,12 +64,12 @@ public abstract class Creatures {
         this.age = age;
     }
 
-    public boolean isAngry() {
+    public boolean isHungry() {
         return hungry;
     }
 
-    public void setAngry(boolean angry) {
-        this.hungry = angry;
+    public void setHungry(boolean hungry) {
+        this.hungry = hungry;
     }
 
     public boolean isTired() {
@@ -105,7 +105,7 @@ public abstract class Creatures {
                 ", height=" + height +
                 ", weight=" + weight +
                 ", age=" + age +
-                ", angry=" + hungry +
+                ", hungry=" + hungry +
                 ", tired=" + tired +
                 ", health=" + health +
                 '}';

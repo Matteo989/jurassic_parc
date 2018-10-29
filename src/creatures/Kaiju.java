@@ -9,7 +9,7 @@ public abstract class Kaiju extends Creatures {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Kaiju(String name, boolean sex, double height, double weight, int age, boolean angry, boolean tired,
+	public Kaiju(String name, boolean sex, double height, double weight, int age, boolean hungry, boolean tired,
 			boolean health) {
 		super();
 		this.name = name;
@@ -17,15 +17,15 @@ public abstract class Kaiju extends Creatures {
 		this.height = height;
 		this.weight = weight;
 		this.age = age;
-		this.angry = angry;
+		this.hungry = hungry;
 		this.tired = tired;
 		this.health = health;
 	}
 
 	public void eatEverything() {
-		if(!this.tired && this.isAngry()) {
+		if(!this.tired && this.isHungry()) {
 			System.out.println(this.name + " le " + this.getType().toLowerCase() + " mange de tout");
-			this.setAngry(false);
+			this.setHungry(false);
 			System.out.println(this.name + " le " + this.getType().toLowerCase() + " a bien mangé");
 			this.setTired(true);
 		} else if (this.tired) {

@@ -21,9 +21,9 @@ public class Ptéranodon extends Omnivorous implements Flying{
 
 	@Override
 	public void eatEverything() {
-		if(!this.tired && this.isAngry()) {
+		if(!this.tired && this.isHungry()) {
 			System.out.println(this.name + " le " + this.getType().toLowerCase() + " mange du poisson et de la viande.");
-			this.setAngry(false);
+			this.setHungry(false);
 			System.out.println(this.name + " le " + this.getType().toLowerCase() + " a bien mangé.");
 			this.setTired(true);
 		} else if (this.tired) {

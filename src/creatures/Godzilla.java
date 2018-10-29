@@ -20,7 +20,7 @@ public final class Godzilla extends Kaiju implements Terrestrial, Marine{
 		this.height = 110; 
 		this.weight = 90000;
 		this.age = 0;
-		angry = false;
+		hungry = false;
 		tired = false;
 		health = true;
 	} //Contructeur privé pour le singleton 

@@ -8,9 +8,9 @@ public class Corythosaure extends Herbivorous implements Terrestrial {
 	public Corythosaure() {
 	}
 
-	public Corythosaure(String name, boolean sex, double height, double weight, int age, boolean angry,
+	public Corythosaure(String name, boolean sex, double height, double weight, int age, boolean hungry,
 			boolean tired, boolean health) {
-		super(name, sex, height, weight, age, angry, tired, health);
+		super(name, sex, height, weight, age, hungry, tired, health);
 		// TODO Auto-generated constructor stub
 	}
 

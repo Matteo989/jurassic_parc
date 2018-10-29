@@ -21,7 +21,7 @@ public class Mithra extends Kaiju implements Flying {
 		//ajouter une envergure (span)
 		this.weight = 40000;
 		this.age = 5000;
-		angry = false;
+		hungry = false;
 		tired = false;
 		health = true;		
 	} //Contructeur privé pour le singleton 
