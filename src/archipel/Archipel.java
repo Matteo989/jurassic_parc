@@ -3,6 +3,8 @@ package archipel;
 import creatures.Diplodocus;
 import creatures.Godzilla;
 import creatures.Tyrannosaure;
+import islands.HerbivorousIsland;
+import regimealimentaire.Herbivorous;
 
 import static creatures.Godzilla.getGodzilla;
 
@@ -102,7 +104,9 @@ public class Archipel {
         Neiko.getDinosaurState();
         Neiko.eatVegetables();
 
-
-
+        HerbivorousIsland test = new HerbivorousIsland();
+        if (test != null) {
+            System.out.println("test ok");
+        }
     }
 }
