@@ -1,23 +1,74 @@
 package employees;
 
+import islands.Island;
+
 public class Employee {
     public String name;
     public char gender;  // M ou F
     public int age;
 
-    public void examinateIsland() {
-        //affiche les carastéristiques de l'enclos ainsi que la liste des animaux.
+    public Employee(String name, char gender, int age) {
+        this.name = name;
+        this.gender = gender;
+        this.age = age;
     }
 
-    public void cleanIsland() {
+    public Employee() {
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public char getGender() {
+        return gender;
+    }
+
+    public void setGender(char gender) {
+        this.gender = gender;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void examinateIsland(Island island) {
+        island.afficherCaracs();
+    }
+
+    public void cleanIsland(Island island) {
+        if (island.getPropreté() == "Bon" && island.getPropreté() == "Correct") {
+            System.out.println("L'île " + island.getName() + " et propre et ne doit pas être nettoyée.");
+            return;
+        } else if (island.getName() == "Herbiland") {
+            System.out.println("L'employé " + this.getName() + " commence a nettoyer l'île " + island.getName());
+            island.setPropreté("Bon");
+            System.out.println("L'île " + island.getName() + " est propre.");
+        } else if (transferisland.getNbAnimaux() != 0) {
+            System.out.println("L'île de transfers est déjà utilisée, attendez que les créatures actuellement présentes retournent dans leur enclos.");
+            return;
+        } else {
+            this.moveAnimal(island, transferisland);
+            System.out.println("L'île est vide et commence à être nettoyée");
+            island.setPropreté("Bon");
+            System.out.println("L'île " + island.getName() + " est propre.");
+            this.moveAnimal(transferisland, island);
+        }
     }
 
 //    public void feedAnimals(Island island) {
 //        //boucle for pour tous les nourrir
 //    }
 //
-//    public void moveAnimal(Island pastIsland, Island newIsland) {
-//
-//    }
+    public void moveAnimal(Island pastIsland, Island newIsland) {
+
+    }
 }
