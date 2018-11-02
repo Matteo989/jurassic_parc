@@ -82,8 +82,15 @@ public abstract class Island<T>{
     }
 
     public void addCreature(T creature){
+        System.out.println(creature.toString());
+        for(T myCreature:creatures) {
+            System.out.println(myCreature.toString());
+            if(myCreature == creature) {
+                System.out.println("La créature " + creature + " est deja dans l'enclos");
+            }
+        }
         this.creatures.add(creature);
-        this.nbAnimaux ++;
+        this.nbAnimaux++;
     }
 
 

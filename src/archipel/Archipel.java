@@ -107,11 +107,16 @@ public class Archipel {
 
         Island herbiland = new HerbivorousIsland("Herbiland", 100000, 100, 0, "Bon", null);
 
-        System.out.println(herbiland.toString());
+        //System.out.println(herbiland.toString());
         herbiland.addCreature(Neiko);
-        System.out.println(herbiland.toString());
+        //System.out.println(herbiland.toString());
         herbiland.addCreature(Marc);
-        System.out.println(herbiland.toString());
+        //System.out.println(herbiland.toString());
+        herbiland.addCreature(Neiko);
+        //System.out.println(herbiland.toString());
+
+        //herbiland.afficherCaracs();
+
 
     }
 }
