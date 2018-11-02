@@ -12,6 +12,10 @@ public abstract class Island<T>{
     private String propreté; //Mauvais, Bon, Correct
     private ArrayList<T> creatures;
 
+    public Island(){
+
+    }
+
     public Island(String name, int area, int animauxMax, int nbAnimaux, String propreté, ArrayList<T> creatures) {
         this.name = name;
         this.area = area;
