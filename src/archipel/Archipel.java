@@ -4,6 +4,7 @@ import creatures.Diplodocus;
 import creatures.Godzilla;
 import creatures.Tyrannosaure;
 import islands.HerbivorousIsland;
+import islands.Island;
 import regimealimentaire.Herbivorous;
 
 import static creatures.Godzilla.getGodzilla;
@@ -104,11 +105,12 @@ public class Archipel {
         Neiko.getDinosaurState();
         Neiko.eatVegetables();
 
-        HerbivorousIsland.getHerbiland();
-        
-        System.out.println(herbiland);
+        Island herbiland = new HerbivorousIsland("Herbiland", 100000, 100, 0, "Bon", null);
 
-        test.addCreature(Marc);
-        System.out.println(test.toString());
+        System.out.println(herbiland.toString());
+        herbiland.addCreature(Neiko);
+        System.out.println(herbiland.toString());
+        herbiland.addCreature(Marc);
+        System.out.println(herbiland.toString());
     }
 }

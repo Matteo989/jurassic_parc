@@ -4,24 +4,26 @@ import creatures.Creature;
 
 import java.util.ArrayList;
 
-public abstract class Island<T extends Creature>{
+public abstract class Island<T>{
     private String name;
-    private int superficie;
+    private int area;
     private int animauxMax;
     private int nbAnimaux;
     private String propreté; //Mauvais, Bon, Correct
-    private ArrayList<T> creatures = new ArrayList<T>();
+    private ArrayList<T> creatures;
 
-    public Island(String name, int superficie, int animauxMax, int nbAnimaux, String propreté, ArrayList<T> creatures) {
+    public Island(String name, int area, int animauxMax, int nbAnimaux, String propreté, ArrayList<T> creatures) {
         this.name = name;
-        this.superficie = superficie;
+        this.area = area;
         this.animauxMax = animauxMax;
         this.nbAnimaux = nbAnimaux;
         this.propreté = propreté;
         this.creatures = creatures;
-    }
-
-    public Island() {
+        if(creatures != null) {
+            this.creatures = creatures;
+        }else{
+            this.creatures = new ArrayList<T>();
+        }
     }
 
     public String getName() {
@@ -32,12 +34,12 @@ public abstract class Island<T extends Creature>{
         this.name = name;
     }
 
-    public int getSuperficie() {
-        return superficie;
+    public int getArea() {
+        return area;
     }
 
-    public void setSuperficie(int superficie) {
-        this.superficie = superficie;
+    public void setArea(int area) {
+        this.area = area;
     }
 
     public int getAnimauxMax() {
@@ -73,10 +75,10 @@ public abstract class Island<T extends Creature>{
     }
 
     public void afficherCaracs(){
-        this.toString();
+        System.out.println(this.toString());
         for(T creature:creatures) {
-            creature.toString();
-        }
+            System.out.println(creature.toString());
+    }
     }
 
     public void addCreature(T creature){
@@ -85,15 +87,16 @@ public abstract class Island<T extends Creature>{
     }
 
 
-    public void moveCreature(){
+    public void removeCreature(T creature){
+        this.creatures.remove(creature);
         //move creatures from this island to TransferIsland
     }
 
-    public void feedCreatures(){
+    /*public void feedCreatures(){
         for(T creature:creatures) {
             creature.setHungry(false);
         }
-    }
+    }*/
 
     public void clean(){
         //test si il vide
@@ -105,7 +108,7 @@ public abstract class Island<T extends Creature>{
     public String toString() {
         return "Island{" +
                 "name='" + name + '\'' +
-                ", superficie=" + superficie +
+                ", area=" + area +
                 ", animauxMax=" + animauxMax +
                 ", nbAnimaux=" + nbAnimaux +
                 ", propreté='" + propreté + '\'' +
