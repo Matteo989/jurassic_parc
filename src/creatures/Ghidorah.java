@@ -16,25 +16,25 @@ public class Ghidorah extends Kaiju implements Flying, Terrestrial {
 	}
 
 	private Ghidorah() {
-		this.name = "Ghidorah";
-		this.sex = true;
-		this.height = 150;
-		this.weight = 70000;
+		this.setName("Ghidorah");
+		this.setSex(true);
+		this.setHeight(150);
+		this.setWeight(70000);
 		//ajouter une envergure (span)
-		this.age = 10000;
-		hungry = false;
-		tired = false;
-		health = true;
+		this.setAge(100);
+		this.setHungry(false);
+		this.setTired(false);
+		this.setHealth(false);
 		
 	} //Contructeur privé pour le singleton 
 	
 	@Override
 	public void walk() {
-		System.out.println(this.name + " le " + this.getType().toLowerCase() + " marche");
+		System.out.println(this.getName() + " marche");
 	}
 
 	@Override
 	public void fly() {
-		System.out.println(this.name + " le " + this.getType().toLowerCase() + " vole");
+		System.out.println(this.getName() + " vole");
 	}
 }

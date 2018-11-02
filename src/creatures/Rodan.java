@@ -15,20 +15,20 @@ public class Rodan extends Kaiju implements Flying{
 	}
 
 	private Rodan() {
-		this.name = "Rodan";
-		this.sex = true;
-		this.height = 70;
-		this.weight = 60000;
+		this.setName("Rodan");
+		this.setSex(true);
+		this.setHeight(70);
+		this.setWeight(60000);
 		//ajouter une envergure (span)
-		this.age = 8000;
-		hungry = false;
-		tired = false;
-		health = true;
+		this.setAge(100);
+		this.setHungry(false);
+		this.setTired(false);
+		this.setHealth(true);
 	} //Contructeur privé pour le singleton 
 	
 	
 	@Override
 	public void fly() {
-		System.out.println(this.name + " le " + this.getType().toLowerCase() + " vole");
+		System.out.println(this.getName() + " vole");
 	}
 }

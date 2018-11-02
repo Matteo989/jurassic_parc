@@ -18,11 +18,11 @@ public class Spinosaure extends Omnivorous implements Marine, Terrestrial {
 
 	@Override
 	public void walk() {
-		System.out.println(this.name + " le " + this.getType().toLowerCase() + " marche.");
+		System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " marche.");
 	}
 
 	@Override
 	public void nager() {
-		System.out.println(this.name + " le " + this.getType().toLowerCase() + " nage.");
+		System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " nage.");
 	}
 }

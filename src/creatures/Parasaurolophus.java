@@ -16,6 +16,6 @@ public class Parasaurolophus extends Herbivorous implements Terrestrial {
 
 	@Override
 	public void walk() {
-		System.out.println(this.name + " le " + this.getType().toLowerCase() + " marche");
+		System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " marche");
 	}
 }

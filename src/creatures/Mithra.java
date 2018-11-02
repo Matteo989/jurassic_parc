@@ -14,20 +14,20 @@ public class Mithra extends Kaiju implements Flying {
 		return mithra;
 	}
 
-	private Mithra() { 
-		this.name = "Mithra";
-		this.sex = false;
-		this.height = 90;	
+	private Mithra() {
+		this.setName("Mithra");
+		this.setSex(true);
+		this.setHeight(150);
+		this.setWeight(70000);
 		//ajouter une envergure (span)
-		this.weight = 40000;
-		this.age = 5000;
-		hungry = false;
-		tired = false;
-		health = true;		
+		this.setAge(100);
+		this.setHungry(false);
+		this.setTired(false);
+		this.setHealth(false);
 	} //Contructeur privé pour le singleton 
 	
 	@Override
 	public void fly() {
-		System.out.println(this.name + " le " + this.getType().toLowerCase() + " nage");
+		System.out.println(this.getName() + " nage");
 	}
 }

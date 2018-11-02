@@ -1,14 +1,14 @@
 package creatures;
 
 public abstract class Creature {
-    public String name;
-    public boolean sex;   // 1 = male, 0 = female
-    public double height; // en cm
-    public double weight; // en kilos
-    public int age;
-    public boolean hungry; // 1 = faim , 0 = pas faim
-    public boolean tired;
-    public boolean health; // 1 = ok , 0 = pas bon
+    private String name;
+    private boolean sex;   // 1 = male, 0 = female
+    private double height; // en cm
+    private double weight; // en kilos
+    private int age;
+    private boolean hungry; // 1 = faim , 0 = pas faim
+    private boolean tired;
+    private boolean health; // 1 = ok , 0 = pas bon
 
     public Creature() {
     }

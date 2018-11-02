@@ -16,20 +16,20 @@ public class Ptéranodon extends Omnivorous implements Flying{
 
 	@Override
 	public void fly() {
-		System.out.println(this.name + " le " + this.getType().toLowerCase() + " vole");
+		System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " vole");
 	}
 
 	@Override
 	public void eatEverything() {
-		if(!this.tired && this.isHungry()) {
-			System.out.println(this.name + " le " + this.getType().toLowerCase() + " mange du poisson et de la viande.");
+		if(!this.isTired() && this.isHungry()) {
+			System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " mange du poisson et de la viande.");
 			this.setHungry(false);
-			System.out.println(this.name + " le " + this.getType().toLowerCase() + " a bien mangé.");
+			System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " a bien mangé.");
 			this.setTired(true);
-		} else if (this.tired) {
-			System.out.println(this.name + " le " + this.getType().toLowerCase() + " est endormi.");
+		} else if (this.isTired()) {
+			System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " est endormi.");
 		} else {
-			System.out.println(this.name + " le " + this.getType().toLowerCase() + " n'a pas faim.");
+			System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " n'a pas faim.");
 		}
 	}
 

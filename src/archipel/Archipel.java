@@ -104,9 +104,12 @@ public class Archipel {
         Neiko.getDinosaurState();
         Neiko.eatVegetables();
 
-        HerbivorousIsland test = new HerbivorousIsland();
+        HerbivorousIsland test = new HerbivorousIsland("HebivorousIsland", 100000, 100, 0, "Bon", null);
         if (test != null) {
             System.out.println("test ok");
         }
+
+        test.addCreature(Marc);
+        System.out.println(test.toString());
     }
 }

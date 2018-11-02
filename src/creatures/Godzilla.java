@@ -15,23 +15,24 @@ public final class Godzilla extends Kaiju implements Terrestrial, Marine{
 	}
 
 	private Godzilla() {
-		this.name = "Godzilla";
-		this.sex = true;
-		this.height = 110; 
-		this.weight = 90000;
-		this.age = 0;
-		hungry = false;
-		tired = false;
-		health = true;
+		this.setName("Godzilla");
+		this.setSex(true);
+		this.setHeight(110);
+		this.setWeight(90000);
+		//ajouter une envergure (span)
+		this.setAge(200);
+		this.setHungry(false);
+		this.setTired(false);
+		this.setHealth(false);
 	} //Contructeur privé pour le singleton 
 	
 	@Override
 	public void nager() {
-		System.out.println("Godzilla nage");
+		System.out.println(this.getName() + " nage");
 	}
 
 	@Override
 	public void walk() {
-		System.out.println("Godzilla marche");
+		System.out.println(this.getName() + " marche");
 	}
 }

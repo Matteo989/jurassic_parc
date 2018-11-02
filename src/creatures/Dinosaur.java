@@ -5,17 +5,8 @@ public abstract class Dinosaur extends Creature {
     public Dinosaur() {
     }
 
-    public Dinosaur(String name, boolean sex, double height, double weight, int age, boolean hungry, boolean tired,
-                    boolean health) {
-        super();
-        this.name = name;
-        this.sex = sex;
-        this.height = height;
-        this.weight = weight;
-        this.age = age;
-        this.hungry = hungry;
-        this.tired = tired;
-        this.health = health;
+    public Dinosaur(String name, boolean sex, double height, double weight, int age, boolean hungry, boolean tired, boolean health) {
+        super(name, sex, height, weight, age, hungry, tired, health);
     }
 
     public void makeNoise() {
