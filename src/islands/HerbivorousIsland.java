@@ -37,6 +37,12 @@ public class HerbivorousIsland<T> extends Island<T>{
     @Override
     public void addCreature(T creature) {
         if (creature instanceof Herbivorous) {
+            for(T myCreature:getCreatures()) {
+                if(myCreature == creature) {
+                    System.out.println("La créature " + creature + " est deja dans l'enclos");
+                    return;
+                }
+            }
             this.getCreatures().add(creature);
             this.setNbAnimaux(getNbAnimaux() + 1);
         } else {
