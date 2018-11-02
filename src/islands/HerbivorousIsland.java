@@ -1,13 +1,30 @@
 package islands;
 
+import creatures.Kaiju;
+import typedinosaure.Marine;
+import typedinosaure.Terrestrial;
+
 import java.util.ArrayList;
 
-public class HerbivorousIsland<Herbivorous> extends Island{
 
-    public HerbivorousIsland() {
+public final class HerbivorousIsland extends Island {
+
+    private static volatile HerbivorousIsland herbiland = null; //volatile pour gérer les thread
+
+    public static HerbivorousIsland getHerbiland() {
+        if (herbiland == null) {
+            herbiland = new HerbivorousIsland();
+        }
+        return herbiland;
     }
 
-    public HerbivorousIsland(String nom, int superficie, int animauxMax, int nbAnimaux, String propreté, ArrayList creatures) {
-        super(nom, superficie, animauxMax, nbAnimaux, propreté, creatures);
+    private HerbivorousIsland() {
+        this.setName("Herbiland");
+        this.setSuperficie(100000);
+        this.setAnimauxMax(100);
+        this.setNbAnimaux(0);
+        this.setPropreté("Bon");
+        this.setCreatures(null);
     }
+
 }

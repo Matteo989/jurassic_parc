@@ -83,7 +83,7 @@ public class Archipel {
         //modifier aléatoirement l’état de certains animaux (les rendre malades, les endormir, etc.)
         //modifier aléatoirement l’état de certains enclos (leur propreté, leur salinité, etc.)
         //passer la main à l'employé (et donc à l’utilisateur) pour qu'il s'occupe du zoo
-        // (son nombre d’action par intervalle de temps devant être limité)
+        // (son namebre d’action par intervalle de temps devant être limité)
 
         Tyrannosaure Marc = new Tyrannosaure("Marc", true, 500, 10000, 10, true, false, true);
         System.out.println(Marc.toString());
@@ -104,10 +104,9 @@ public class Archipel {
         Neiko.getDinosaurState();
         Neiko.eatVegetables();
 
-        HerbivorousIsland test = new HerbivorousIsland("HebivorousIsland", 100000, 100, 0, "Bon", null);
-        if (test != null) {
-            System.out.println("test ok");
-        }
+        HerbivorousIsland.getHerbiland();
+        
+        System.out.println(herbiland);
 
         test.addCreature(Marc);
         System.out.println(test.toString());

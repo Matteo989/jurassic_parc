@@ -5,15 +5,15 @@ import creatures.Creature;
 import java.util.ArrayList;
 
 public abstract class Island<T extends Creature>{
-    private String nom;
+    private String name;
     private int superficie;
     private int animauxMax;
     private int nbAnimaux;
     private String propreté; //Mauvais, Bon, Correct
     private ArrayList<T> creatures = new ArrayList<T>();
 
-    public Island(String nom, int superficie, int animauxMax, int nbAnimaux, String propreté, ArrayList<T> creatures) {
-        this.nom = nom;
+    public Island(String name, int superficie, int animauxMax, int nbAnimaux, String propreté, ArrayList<T> creatures) {
+        this.name = name;
         this.superficie = superficie;
         this.animauxMax = animauxMax;
         this.nbAnimaux = nbAnimaux;
@@ -24,12 +24,12 @@ public abstract class Island<T extends Creature>{
     public Island() {
     }
 
-    public String getNom() {
-        return nom;
+    public String getName() {
+        return name;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getSuperficie() {
@@ -104,7 +104,7 @@ public abstract class Island<T extends Creature>{
     @Override
     public String toString() {
         return "Island{" +
-                "nom='" + nom + '\'' +
+                "name='" + name + '\'' +
                 ", superficie=" + superficie +
                 ", animauxMax=" + animauxMax +
                 ", nbAnimaux=" + nbAnimaux +
