@@ -1,11 +1,10 @@
 package islands;
 
-import creatures.Creatures;
-import creatures.Dinosaur;
+import creatures.Creature;
 
 import java.util.ArrayList;
 
-public abstract class Island<T>{
+public abstract class Island<T extends Creature>{
     private String nom;
     private int superficie;
     private int animauxMax, nbAnimaux;

@@ -1,9 +1,6 @@
 package creatures;
 
-import typedinosaure.*;
-import regimealimentaire.*;
-
-public abstract class Dinosaur extends Creatures {
+public abstract class Dinosaur extends Creature {
 
     public Dinosaur() {
     }

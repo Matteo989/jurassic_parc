@@ -1,6 +1,6 @@
 package creatures;
 
-public abstract class Creatures {
+public abstract class Creature {
     public String name;
     public boolean sex;   // 1 = male, 0 = female
     public double height; // en cm
@@ -10,10 +10,10 @@ public abstract class Creatures {
     public boolean tired;
     public boolean health; // 1 = ok , 0 = pas bon
 
-    public Creatures() {
+    public Creature() {
     }
 
-    public Creatures(String name, boolean sex, double height, double weight, int age, boolean hungry, boolean tired, boolean health) {
+    public Creature(String name, boolean sex, double height, double weight, int age, boolean hungry, boolean tired, boolean health) {
         this.name = name;
         this.sex = sex;
         this.height = height;

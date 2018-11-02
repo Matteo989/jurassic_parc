@@ -1,9 +1,6 @@
 package creatures;
 
-import regimealimentaire.*;
-import typedinosaure.*;
-
-public abstract class Kaiju extends Creatures {
+public abstract class Kaiju extends Creature {
 	
 	public Kaiju() {
 		// TODO Auto-generated constructor stub
