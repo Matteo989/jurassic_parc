@@ -104,11 +104,8 @@ public class Archipel {
         Neiko.getDinosaurState();
         Neiko.eatVegetables();
 
-        HerbivorousIsland.getHerbiland();
-        
-        System.out.println(herbiland);
-
-        test.addCreature(Marc);
-        System.out.println(test.toString());
+        var Herbiland = HerbivorousIsland.getHerbiland();
+        Herbiland.addCreature(Neiko);
+        System.out.println(Herbiland.toString());
     }
 }
