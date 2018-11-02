@@ -1,6 +1,8 @@
 package employees;
 
+import islands.HerbivorousIsland;
 import islands.Island;
+import islands.TransferIsland;
 
 public class Employee {
     public String name;
@@ -44,23 +46,23 @@ public class Employee {
         island.afficherCaracs();
     }
 
-    public void cleanIsland(Island island) {
+    public void cleanIsland(Island island, TransferIsland transferIsland) {
         if (island.getPropreté() == "Bon" && island.getPropreté() == "Correct") {
             System.out.println("L'île " + island.getName() + " et propre et ne doit pas être nettoyée.");
             return;
-        } else if (island.getName() == "Herbiland") {
+        } else if (island instanceof HerbivorousIsland) {
             System.out.println("L'employé " + this.getName() + " commence a nettoyer l'île " + island.getName());
             island.setPropreté("Bon");
             System.out.println("L'île " + island.getName() + " est propre.");
-        } else if (transferisland.getNbAnimaux() != 0) {
+        } else if (transferIsland.getNbAnimaux() != 0) {
             System.out.println("L'île de transfers est déjà utilisée, attendez que les créatures actuellement présentes retournent dans leur enclos.");
             return;
         } else {
-            this.moveAnimal(island, transferisland);
+            this.moveAnimal(island, transferIsland);
             System.out.println("L'île est vide et commence à être nettoyée");
             island.setPropreté("Bon");
             System.out.println("L'île " + island.getName() + " est propre.");
-            this.moveAnimal(transferisland, island);
+            this.moveAnimal(transferIsland, island);
         }
     }
 

@@ -3,8 +3,10 @@ package archipel;
 import creatures.Diplodocus;
 import creatures.Godzilla;
 import creatures.Tyrannosaure;
+import employees.Employee;
 import islands.HerbivorousIsland;
 import islands.Island;
+import islands.TransferIsland;
 import regimealimentaire.Herbivorous;
 
 import static creatures.Godzilla.getGodzilla;
@@ -105,8 +107,15 @@ public class Archipel {
         Neiko.getDinosaurState();
         Neiko.eatVegetables();
 
-        Island herbiland = new HerbivorousIsland("Herbiland", 100000, 100, 0, "Bon", null);
+        var transferIsland = TransferIsland.getIleTransfer();
+        System.out.println(transferIsland.toString());
 
+        Island herbiland = new HerbivorousIsland("Herbiland", 100000, 100, 0, "Mauvais", null);
+
+        //Lors du démarrage de l'application demande a l'utilisateur son nom, son sex, son age et définir un employe a partir
+        Employee employee = new Employee();
+
+        employee.cleanIsland(herbiland, transferIsland);
 
         herbiland.addCreature(Neiko);
         herbiland.addCreature(Marc);
