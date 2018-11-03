@@ -1,23 +1,18 @@
 package islands;
 
-import creatures.Kaiju;
+import regimealimentaire.Carnivorous;
 import regimealimentaire.Herbivorous;
-import typedinosaure.Marine;
-import typedinosaure.Terrestrial;
 
 import java.util.ArrayList;
 
-
-
-public class HerbivorousIsland<T> extends Island<T>{
-
-    public HerbivorousIsland(String name, int area, int animauxMax, int nbAnimaux, String propreté, ArrayList creatures) {
+public class CarnivorousLand<T> extends Island<T> {
+    public CarnivorousLand(String name, int area, int animauxMax, int nbAnimaux, String propreté, ArrayList creatures) {
         super(name, area, animauxMax, nbAnimaux, propreté, creatures);
     }
 
     @Override
     public void addCreature(T creature) {
-        if (creature instanceof Herbivorous) {
+        if (creature instanceof Carnivorous) {
             for(T myCreature:getCreatures()) {
                 if(myCreature == creature) {
                     System.out.println("La créature " + creature + " est deja dans l'enclos");

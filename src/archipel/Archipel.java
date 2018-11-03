@@ -1,13 +1,16 @@
 package archipel;
 
+import creatures.meute.Compsognathus;
 import creatures.Diplodocus;
 import creatures.Godzilla;
 import creatures.Tyrannosaure;
+import creatures.meute.HeatHowlStrategy;
+import creatures.meute.HowlStrategy;
+import creatures.meute.Pack;
 import employees.Employee;
 import islands.HerbivorousIsland;
 import islands.Island;
 import islands.TransferIsland;
-import regimealimentaire.Herbivorous;
 
 import static creatures.Godzilla.getGodzilla;
 
@@ -123,6 +126,16 @@ public class Archipel {
 
         herbiland.afficherCaracs();
 
+        Pack meute = new Pack("Meute de petit dinosaures");
+        Compsognathus compsognathus = new Compsognathus("Spot", true, 2, 10, 5, false, false, true, 10, 1, 10, 1, 1, meute);
+        Compsognathus c1 = new Compsognathus("Myrtille", false, 2, 10, 5, false, false, true, 10, 5, 5, 10, 1, meute);
+        meute.addCompsognathusToMeute(compsognathus);
+        meute.addCompsognathusToMeute(c1);
+
+
+        HowlStrategy heatHowlStrategy = new HeatHowlStrategy();
+        compsognathus.setHowlStrategy(heatHowlStrategy);
+        compsognathus.howl();
 
     }
 }
