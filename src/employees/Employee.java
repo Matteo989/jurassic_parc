@@ -42,6 +42,15 @@ public class Employee {
         this.age = age;
     }
 
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "name='" + name + '\'' +
+                ", gender=" + gender +
+                ", age=" + age +
+                '}';
+    }
+
     public void examinateIsland(Island island) {
         island.afficherCaracs();
     }
