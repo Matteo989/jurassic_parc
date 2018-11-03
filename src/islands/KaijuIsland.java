@@ -12,10 +12,15 @@ public class KaijuIsland<T> extends Island<T> {
 
     @Override
     public void addCreature(T creature) {
-        if (creature instanceof Kaiju) {
-            this.getCreatures().add(creature);
+        if (this.getNbAnimaux() < this.getAnimauxMax()) {
+            if (creature instanceof Kaiju) {
+                this.getCreatures().add(creature);
+                this.setNbAnimaux(getNbAnimaux() + 1);
+            } else {
+                System.out.println(creature.toString() + "ne peut pas être ajouté a l'ile");
+            }
         } else {
-            System.out.println(creature.toString() + "ne peut pas être ajouté a l'ile");
+            System.out.println("Le nombre maximum d'animaux à été atteint.");
         }
     }
 }

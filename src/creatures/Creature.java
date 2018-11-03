@@ -98,9 +98,9 @@ public abstract class Creature {
 
     @Override
     public String toString() {
-        return this.getCreatureType() + "{" +
+        return this.getCreatureType() + "={" +
                 "type='" + this.getType() + '\'' +
-                "name='" + name + '\'' +
+                ", name='" + name + '\'' +
                 ", sex=" + sex +
                 ", height=" + height +
                 ", weight=" + weight +

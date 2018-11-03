@@ -21,6 +21,10 @@ public final class TransferIsland<T> extends Island<T>{
         this.setAnimauxMax(200);
         this.setNbAnimaux(0);
         this.setPropreté("Bon");
-        this.setCreatures(null);
+        if(getCreatures() != null) {
+            this.setCreatures(this.getCreatures());
+        }else{
+            this.setCreatures(new ArrayList<T>());
+        }
     }
 }

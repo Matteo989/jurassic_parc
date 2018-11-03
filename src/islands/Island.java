@@ -82,7 +82,7 @@ public abstract class Island<T>{
         System.out.println(this.toString());
         for(T creature:creatures) {
             System.out.println(creature.toString());
-    }
+        }
     }
 
     public void addCreature(T creature){

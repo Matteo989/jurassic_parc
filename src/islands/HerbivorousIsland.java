@@ -7,7 +7,7 @@ import typedinosaure.Terrestrial;
 
 import java.util.ArrayList;
 
-public class HerbivorousIsland<T> extends Island<T>{
+public class HerbivorousIsland<T> extends Island<T> {
 
     public HerbivorousIsland(String name, int area, int animauxMax, int nbAnimaux, String propreté, ArrayList creatures) {
         super(name, area, animauxMax, nbAnimaux, propreté, creatures);
@@ -15,17 +15,21 @@ public class HerbivorousIsland<T> extends Island<T>{
 
     @Override
     public void addCreature(T creature) {
-        if (creature instanceof Herbivorous) {
-            for(T myCreature:getCreatures()) {
-                if(myCreature == creature) {
-                    System.out.println("La créature " + creature + " est deja dans l'enclos");
-                    return;
+        if (this.getNbAnimaux() < this.getAnimauxMax()) {
+            if (creature instanceof Herbivorous) {
+                for (T myCreature : getCreatures()) {
+                    if (myCreature == creature) {
+                        System.out.println("La créature " + creature + " est deja dans l'enclos");
+                        return;
+                    }
                 }
+                this.getCreatures().add(creature);
+                this.setNbAnimaux(getNbAnimaux() + 1);
+            } else {
+                System.out.println(creature.getClass().getSimpleName() + " ne peut pas être ajouté a l'ile");
             }
-            this.getCreatures().add(creature);
-            this.setNbAnimaux(getNbAnimaux() + 1);
         } else {
-            System.out.println(creature.getClass().getSimpleName() + " ne peut pas être ajouté a l'ile");
+            System.out.println("Le nombre maximum d'animaux à été atteint.");
         }
     }
 }
