@@ -124,15 +124,6 @@ public class Archipel<T extends Island> {
 //        }
 //    }
 
-    public ArrayList<Creature> getAllCreatures() {
-        ArrayList<Creature> allCreatures = new ArrayList<>();
-        for (T islands:islands) {
-            for (int i = 0; i < islands.getNbAnimaux(); i++) {
-                allCreatures.add((Creature) islands.getCreatures().get(i));
-            }
-        }
-        return allCreatures;
-    }
 
     public Creature getRandomCreature() {
         Island ileRandom = this.getRandomIsland();
@@ -403,13 +394,7 @@ public class Archipel<T extends Island> {
             }
 
             if (i == 30 || i == 60 || i == 90) {
-                for (int k = 0; k < jurassicIsland.getNbAnimals(0); k++) {
-                    Creature thebeast = jurassicIsland.getAllCreatures().get(k);
-                    thebeast.setAge(thebeast.getAge() + 1);
-                    if (thebeast.getAge() > 15) {
-                        System.out.println("RIP ! Une de vos créatures est morte de vieillesse : " + thebeast.getName());
-                    }
-                }
+                jurassicIsland.getOldAllCreature();
             }
             i++;
         }
