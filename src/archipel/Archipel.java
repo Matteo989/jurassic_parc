@@ -133,8 +133,8 @@ public class Archipel<T extends Island> {
 
         // son sexe
         System.out.println("Êtes-vous un homme (M) ou une femme (F) => ");
-        char employee_gender = in.next().charAt(0);
-        while (employee_gender != 'M' && employee_gender != 'F') {
+        char employee_gender = Character.toLowerCase(in.next().charAt(0));
+        while (employee_gender != 'm' && employee_gender != 'f') {
             System.out.println("Veuillez répondre par M ou F => ");
             employee_gender = in.next().charAt(0);
         }
@@ -236,37 +236,69 @@ public class Archipel<T extends Island> {
         kaijuLand.addCreature(Ghidorah.getGhidorah());
         kaijuLand.addCreature(Mithra.getMithra());
         kaijuLand.addCreature(Rodan.getRodan());
+
         //Pour afficher le nombre d'animaux.
         System.out.println(jurassicIsland.getNbAnimals());
 
+        //Pour afficher le toString de tout l'archipel et le detail de chaque île.
+        //jurassicIsland.afficherInfos();
 
-
+        int i = 0;
+        int lower = 0;
+        int higher = 100;
+        while (i != 100) {
+            int random = (int)(Math.random() * (higher-lower)) + lower;
+            System.out.println(i);
+            if (random == 0) {
+                System.out.println("Une énorme météorite explose sur l'île principale de Jurassic Park Land détruisant tous les animaux.");
+                return;
+            } else if (random <= 15){
+                System.out.println("Un animal se déplace.");
+            } else if (random <= 30) {
+                System.out.println("Un animal crie");
+            } else if (random <= 50) {
+                System.out.println("Un animal a faim.");
+            } else if (random <= 60) {
+                System.out.println("Un animal est malade.");
+            } else if (random <= 65) {
+                System.out.println("Un animal dort.");
+            } else if (random <= 70) {
+                System.out.println("Un animal se réveille");
+            } else if (random <= 80) {
+                System.out.println("Un enclos est sale/abîmé");
+            } else if (random <= 90) {
+                System.out.println("Un couple d'animaux a copulé et la femelle est enceinte");
+            } else if (random <= 94) {
+                System.out.println("Godzilla se déplace");
+            } else if (random <= 99) {
+                System.out.println("Un Kaiju se déplace");
+            } else {
+                System.out.println("La purge : Godzilla et les kaijus se battent et font exploser tout le Jurassic Park Land");
+                return;
+            }
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            i++;
+        }
 //        Marc.getDinosaurState();
 //        Marc.walk();
 //        Marc.eatMeat();
 //        Marc.eatMeat();
 //        Marc.getDinosaurState();
-//
-//
+
 //        getGodzilla().nager();
 //        getGodzilla().walk();
 //        System.out.println(getGodzilla().getType()); // return Godzilla
-//
 
-//
 //        Neiko.walk();
 //        Neiko.getDinosaurState();
 //        Neiko.eatVegetables();
-//
+
 //        employee.cleanIsland(herbiland, transferIsland);
-//
 
-
-
-        jurassicIsland.afficherInfos();
-//
-//        herbiland.afficherCaracs();
-//
 //        Pack meute = new Pack("Meute de petit dinosaures");
 //        Compsognathus compsognathus = new Compsognathus("Spot", true, 2, 10, 5, false, false, true, 10, 1, 10, 1, 1, meute);
 //        Compsognathus c1 = new Compsognathus("Myrtille", false, 2, 10, 5, false, false, true, 10, 5, 5, 10, 1, meute);
