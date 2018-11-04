@@ -124,6 +124,16 @@ public class Archipel<T extends Island> {
 //        }
 //    }
 
+    public ArrayList<Creature> getAllCreatures() {
+        ArrayList<Creature> allCreatures = new ArrayList<>();
+        for (T islands:islands) {
+            for (int i = 0; i < islands.getNbAnimaux(); i++) {
+                allCreatures.add((Creature) islands.getCreatures().get(i));
+            }
+        }
+        return allCreatures;
+    }
+
     public Creature getRandomCreature() {
         Island ileRandom = this.getRandomIsland();
         int creatureAleatoire = (int) (Math.random() * ileRandom.getNbAnimaux());
@@ -275,11 +285,13 @@ public class Archipel<T extends Island> {
         int i = 0;
         int lower = 0;
         int higher = 100;
+        int nbActionEmploye = 0;
         while (i != 100) {
             Creature laBete = null;
             Island ileAnettoyer = null;
             char response = ' ';
             int random = (int)(Math.random() * (higher-lower)) + lower;
+
             System.out.println(i);
             if (random == 0) {
                 System.out.println("Une énorme météorite explose sur l'île principale de Jurassic Park Land détruisant tous les animaux.");
@@ -298,8 +310,12 @@ public class Archipel<T extends Island> {
                     System.out.println("Veuillez répondre par O ou N => ");
                     response = in.next().charAt(0);
                 }
-                if (response == 'o') {
+                if (response == 'o' && nbActionEmploye < 10) {
                     employe_jurassic.feedAnimals(laBete);
+                    nbActionEmploye++;
+                } else if (nbActionEmploye > 10) {
+                    System.out.println("L'employé est fatigué et se repose.");
+                    nbActionEmploye = 0;
                 }
             } else if (random <= 60) {
                 laBete = jurassicIsland.getRandomCreature();
@@ -311,8 +327,17 @@ public class Archipel<T extends Island> {
                     System.out.println("Veuillez répondre par O ou N => ");
                     response = in.next().charAt(0);
                 }
-                if (response == 'o') {
+                if (response == 'o' && nbActionEmploye < 10) {
                     employe_jurassic.healAnimals(laBete);
+                    nbActionEmploye++;
+                } else if (response == 'n' && nbActionEmploye < 10) {
+                    laBete.setAge(laBete.getAge() + 1);
+                    if (laBete.getAge() > 15) {
+                        System.out.println("La créature " + laBete.getName() + " est morte due à sa maladie.");
+                    }
+                } else {
+                    System.out.println("L'employé est fatigué et doit se repose.");
+                    nbActionEmploye = 0;
                 }
             } else if (random <= 65) {
                 laBete = jurassicIsland.getRandomCreature();
@@ -330,6 +355,31 @@ public class Archipel<T extends Island> {
                 laBete = jurassicIsland.getRandomCreature();
                 if (laBete.isSex() == false) {
                     System.out.println("La femelle " + laBete.getName() + " attend un bébé.");
+                    Egg nouvelleCreature = laBete.layEggs();
+                    Creature newDino = nouvelleCreature.hatch();
+                    if (newDino instanceof Herbivorous) {
+                        herbiLand.addCreature(newDino);
+                        System.out.println("Félicitations aux heureux parents, l'île " + herbiLand.getName() + " a un nouveau locataire. Bienvenue à " + newDino.getName());
+                    } else if (newDino instanceof Tyrannosaure) {
+                        t_rexLand.addCreature(newDino);
+                        System.out.println("Félicitations aux heureux parents, l'île " + herbiLand.getName() + " a un nouveau locataire. Bienvenue à " + newDino.getName());
+                    } else if (newDino instanceof Cératosaure) {
+                        ceratoLand.addCreature(newDino);
+                        System.out.println("Félicitations aux heureux parents, l'île " + herbiLand.getName() + " a un nouveau locataire. Bienvenue à " + newDino.getName());
+                    } else if (newDino instanceof Compsognathus) {
+                        compsoLand.addCreature(newDino);
+                        System.out.println("Félicitations aux heureux parents, l'île " + herbiLand.getName() + " a un nouveau locataire. Bienvenue à " + newDino.getName());
+                    } else if (newDino instanceof Ptéranodon) {
+                        pteraLand.addCreature(newDino);
+                        System.out.println("Félicitations aux heureux parents, l'île " + herbiLand.getName() + " a un nouveau locataire. Bienvenue à " + newDino.getName());
+                    } else if (newDino instanceof Spinosaure) {
+                        spinoLand.addCreature(newDino);
+                        System.out.println("Félicitations aux heureux parents, l'île " + herbiLand.getName() + " a un nouveau locataire. Bienvenue à " + newDino.getName());
+                    } else if (newDino instanceof Vélociraptor) {
+                        veloLand.addCreature(newDino);
+                        System.out.println("Félicitations aux heureux parents, l'île " + herbiLand.getName() + " a un nouveau locataire. Bienvenue à " + newDino.getName());
+                    }
+                    System.out.println(jurassicIsland.getNbAnimals());
                 }
             } else if (random <= 94) {
                 Godzilla.getGodzilla().walk();
@@ -343,6 +393,16 @@ public class Archipel<T extends Island> {
                 Thread.sleep(500);
             } catch (InterruptedException e) {
                 e.printStackTrace();
+            }
+
+            if (i == 30 || i == 60 || i == 90) {
+                for (int k = 0; k < jurassicIsland.getNbAnimals(0); k++) {
+                    Creature thebeast = jurassicIsland.getAllCreatures().get(k);
+                    thebeast.setAge(thebeast.getAge() + 1);
+                    if (thebeast.getAge() > 15) {
+                        System.out.println("RIP ! Une de vos créatures est morte de vieillesse : " + thebeast.getName());
+                    }
+                }
             }
             i++;
         }

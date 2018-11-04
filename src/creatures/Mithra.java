@@ -30,4 +30,9 @@ public class Mithra extends Kaiju implements Flying {
 	public void fly() {
 		System.out.println(this.getName() + " nage");
 	}
+
+	@Override
+	public Egg layEggs() {
+		return null;
+	}
 }

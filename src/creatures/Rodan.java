@@ -31,4 +31,9 @@ public class Rodan extends Kaiju implements Flying{
 	public void fly() {
 		System.out.println(this.getName() + " vole");
 	}
+
+	@Override
+	public Egg layEggs() {
+		return null;
+	}
 }

@@ -35,4 +35,10 @@ public final class Godzilla extends Kaiju implements Terrestrial, Marine{
 	public void walk() {
 		System.out.println(this.getName() + " marche");
 	}
+
+	@Override
+	public Egg layEggs() {
+		return null;
+	}
+
 }
