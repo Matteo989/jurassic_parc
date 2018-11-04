@@ -17,10 +17,10 @@ public class KaijuIsland<T> extends Island<T> {
                 this.getCreatures().add(creature);
                 this.setNbAnimaux(getNbAnimaux() + 1);
             } else {
-                System.out.println(creature.toString() + "ne peut pas être ajoute a l'ile");
+                System.out.println(creature.toString() + "ne peut pas etre ajoute a l'ile");
             }
         } else {
-            System.out.println("Le nombre maximum d'animaux à ete atteint.");
+            System.out.println("Le nombre maximum d'animaux a ete atteint.");
         }
     }
 

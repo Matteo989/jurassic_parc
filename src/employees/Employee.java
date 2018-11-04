@@ -55,20 +55,20 @@ public class Employee {
 
     public void cleanIsland(Island island, TransferIsland transferIsland) {
         if (island.getProprete() == "Bon" && island.getProprete() == "Correct") {
-            System.out.println("L'île " + island.getName() + " et propre et ne doit pas être nettoyee.");
+            System.out.println("L'ile " + island.getName() + " et propre et ne doit pas etre nettoyee.");
             return;
         } else if (island instanceof HerbivorousIsland) {
-            System.out.println("L'employe " + this.getName() + " commence a nettoyer l'île " + island.getName());
+            System.out.println("L'employe " + this.getName() + " commence a nettoyer l'ile " + island.getName());
             island.setProprete("Bon");
-            System.out.println("L'île " + island.getName() + " est propre.");
+            System.out.println("L'ile " + island.getName() + " est propre.");
         } else if (transferIsland.getNbAnimaux() != 0) {
-            System.out.println("L'île de transfers est dejà utilisee, attendez que les creatures actuellement presentes retournent dans leur enclos.");
+            System.out.println("L'ile de transfers est deja utilisee, attendez que les creatures actuellement presentes retournent dans leur enclos.");
             return;
         } else {
             this.moveAnimal(island, transferIsland);
-            System.out.println("L'île a ete videe et commence à être nettoyee");
+            System.out.println("L'ile a ete videe et commence a etre nettoyee");
             island.setProprete("Bon");
-            System.out.println("L'île " + island.getName() + " est propre.");
+            System.out.println("L'ile " + island.getName() + " est propre.");
             this.moveAnimal(transferIsland, island);
         }
     }

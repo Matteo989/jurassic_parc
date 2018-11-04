@@ -10,7 +10,7 @@ public class BlindingFlash extends DecorateurKaiju {
 
     @Override
     public void useSpell() {
-        System.out.println("Le kaiju " + this.kaiju.getName() + " emmet une lumière aveuglante");
+        System.out.println("Le kaiju " + this.kaiju.getName() + " emmet une lumiere aveuglante");
     }
 
 

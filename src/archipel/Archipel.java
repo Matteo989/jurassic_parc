@@ -15,11 +15,11 @@ import java.util.Scanner;
 import static java.lang.Character.toLowerCase;
 
 public class Archipel<T extends Island> {
-    // un archipel est un amas d'îles, îles qui sont nos enclos pour le projet.
-    // Une île pour godzilla (peut etre radioactive), une île pour les kaiju,
-    // une île pour tous les herbivores,
-    // un île pour chaque sorte de carnivores et omnivores,
-    // une volière pour les pterodactyl et un bassin pour les dino marins.
+    // un archipel est un amas d'iles, iles qui sont nos enclos pour le projet.
+    // Une ile pour godzilla (peut etre radioactive), une ile pour les kaiju,
+    // une ile pour tous les herbivores,
+    // un ile pour chaque sorte de carnivores et omnivores,
+    // une voliere pour les pterodactyl et un bassin pour les dino marins.
 
     private String name;
     private Employee employe;
@@ -90,7 +90,7 @@ public class Archipel<T extends Island> {
             this.getIslands().add(island);
             this.setNbIleActual(getNbIleActual() + 1);
         } else {
-            System.out.println(island.getClass().getSimpleName() + " n'est pas une île");
+            System.out.println(island.getClass().getSimpleName() + " n'est pas une ile");
         }
     }
 
@@ -153,8 +153,8 @@ public class Archipel<T extends Island> {
         //À intervalle regulier, cette  methode doit :
         //modifier aleatoirement l’etat de certains animaux (les rendre malades, les endormir, etc.)
         //modifier aleatoirement l’etat de certains enclos (leur proprete, leur salinite, etc.)
-        //passer la main à l'employe (et donc à l’utilisateur) pour qu'il s'occupe du zoo
-        // (son namebre d’action par intervalle de temps devant être limite)
+        //passer la main a l'employe (et donc a l’utilisateur) pour qu'il s'occupe du zoo
+        // (son namebre d’action par intervalle de temps devant etre limite)
 
 
 
@@ -184,13 +184,13 @@ public class Archipel<T extends Island> {
             employee_age = in.nextInt();
         }
 
-        // on defini un employe à partir de ces infos
+        // on defini un employe a partir de ces infos
         Employee employe_jurassic = new Employee(employee_name, employee_gender, employee_age);
 
         //Creation du zoo (archipel)
         Archipel jurassicIsland = new Archipel("Jurassic Park Land", employe_jurassic, 20, 0, new ArrayList<Island>());
 
-        //Creation de toutes nos îles
+        //Creation de toutes nos iles
         Island herbiLand = new HerbivorousIsland("HerbiLand", 100000, 100, 0, "Bon", null);
         Island t_rexLand = new CarnivorousLand("T-rexLand", 10000, 10, 0, "Bon", null);
         Island compsoLand = new CarnivorousLand("CompsoLand", 1000, 150, 0, "Bon", null);
@@ -200,9 +200,9 @@ public class Archipel<T extends Island> {
         Island spinoLand = new SpinoLand("SpinoLand", 1000, 10, 0, "Bon", null, 500);
         Island godzilLand = new KaijuIsland("GodzilLand", 3000, 1, 0, "Bon", null);
         Island kaijuLand = new KaijuIsland("KaijuLand", 10000, 3, 0, "Bon", null);
-        var transferIsland = TransferIsland.getIleTransfer();
+        TransferIsland transferIsland = TransferIsland.getIleTransfer();
 
-        //Ajout des îles dans l'archipel
+        //Ajout des iles dans l'archipel
         jurassicIsland.addIsland(herbiLand);
         jurassicIsland.addIsland(t_rexLand);
         jurassicIsland.addIsland(compsoLand);
@@ -215,12 +215,12 @@ public class Archipel<T extends Island> {
         jurassicIsland.addIsland(transferIsland);
 
         System.out.println("Bonjour " + employe_jurassic.getName() + ", bienvenue dans le Jurassic Park Land.\n" +
-                "Vous êtes l'employe d'un Zoo d'un nouveau genre, ici pas d'animaux communs mais bel et bien des dinosaures comme au bon vieux temps.\n" +
+                "Vous etes l'employe d'un Zoo d'un nouveau genre, ici pas d'animaux communs mais bel et bien des dinosaures comme au bon vieux temps.\n" +
                 "Mais en plus de ces dinosaures, nous avons decides d'heberger egalement des Kaiju et leur copain Godzilla.\n" +
                 "Tout au long de votre contrat, des actions vous seront propose, mais vous ne disposez que de 10 actions avant de pouvoir vous reposer.\n" +
-                "En effet, s'occuper de dinosaures et plus laborieux que des animaux classiques. \nFaîtes les bons choix.");
+                "En effet, s'occuper de dinosaures et plus laborieux que des animaux classiques. \nFaites les bons choix.");
 
-        //On cree deux dinosaures de chaque espèces. Puis un seul kaiju de chaque et un Godzilla.
+        //On cree deux dinosaures de chaque especes. Puis un seul kaiju de chaque et un Godzilla.
         Ankylosaure AnkyMale = new Ankylosaure("AnkyMale", true, 250, 6000, 8, false, false, true);
         Ankylosaure AnkyFemale = new Ankylosaure("AnkyFemale", false, 230, 5600, 9, false, false, true);
         herbiLand.addCreature(AnkyMale);
@@ -295,7 +295,7 @@ public class Archipel<T extends Island> {
         //Pour afficher le nombre d'animaux.
         System.out.println(jurassicIsland.getNbAnimals());
 
-        //Pour afficher le toString de tout l'archipel et le detail de chaque île.
+        //Pour afficher le toString de tout l'archipel et le detail de chaque ile.
         //jurassicIsland.afficherInfos();
 
         int i = 0;
@@ -317,7 +317,7 @@ public class Archipel<T extends Island> {
             }
 
             if (random == 0) {
-                System.out.println("Une enorme meteorite explose sur l'île principale de Jurassic Park Land detruisant tous les animaux.");
+                System.out.println("Une enorme meteorite explose sur l'ile principale de Jurassic Park Land detruisant tous les animaux.");
                 return;
             } else if (random <= 15){
                 CompsoFemale.setHowlStrategy(agressivHowl);
@@ -365,7 +365,7 @@ public class Archipel<T extends Island> {
                 } else if (response == 'n' && nbActionEmploye < 10) {
                     laBete.setAge(laBete.getAge() + 1);
                     if (laBete.getAge() > 15) {
-                        System.out.println("La creature " + laBete.getName() + " est morte due à sa maladie.");
+                        System.out.println("La creature " + laBete.getName() + " est morte due a sa maladie.");
                     }
                 } else {
                     System.out.println("L'employe est fatigue et doit se repose.");
@@ -384,7 +384,7 @@ public class Archipel<T extends Island> {
             } else if (random <= 80) {
                 ileAnettoyer = jurassicIsland.getRandomIsland();
                 ileAnettoyer.setProprete("Mauvais");
-                System.out.println(ileAnettoyer.getName() + " est sale/abîme, voulez-vous le nettoyer ? O / N =>");
+                System.out.println(ileAnettoyer.getName() + " est sale/abime, voulez-vous le nettoyer ? O / N =>");
                 response = toLowerCase(in.next().charAt(0));
                 while (response != 'o' && response != 'n') {
                     System.out.println("Veuillez repondre par O ou N => ");
@@ -408,25 +408,25 @@ public class Archipel<T extends Island> {
                     Creature newDino = nouvelleCreature.hatch();
                     if (newDino instanceof Herbivorous) {
                         herbiLand.addCreature(newDino);
-                        System.out.println("Felicitations aux heureux parents, l'île " + herbiLand.getName() + " a un nouveau locataire. Bienvenue à " + newDino.getName());
+                        System.out.println("Felicitations aux heureux parents, l'ile " + herbiLand.getName() + " a un nouveau locataire. Bienvenue a " + newDino.getName());
                     } else if (newDino instanceof Tyrannosaure) {
                         t_rexLand.addCreature(newDino);
-                        System.out.println("Felicitations aux heureux parents, l'île " + herbiLand.getName() + " a un nouveau locataire. Bienvenue à " + newDino.getName());
+                        System.out.println("Felicitations aux heureux parents, l'ile " + herbiLand.getName() + " a un nouveau locataire. Bienvenue a " + newDino.getName());
                     } else if (newDino instanceof Ceratosaure) {
                         ceratoLand.addCreature(newDino);
-                        System.out.println("Felicitations aux heureux parents, l'île " + herbiLand.getName() + " a un nouveau locataire. Bienvenue à " + newDino.getName());
+                        System.out.println("Felicitations aux heureux parents, l'ile " + herbiLand.getName() + " a un nouveau locataire. Bienvenue a " + newDino.getName());
                     } else if (newDino instanceof Compsognathus) {
                         compsoLand.addCreature(newDino);
-                        System.out.println("Felicitations aux heureux parents, l'île " + herbiLand.getName() + " a un nouveau locataire. Bienvenue à " + newDino.getName());
+                        System.out.println("Felicitations aux heureux parents, l'ile " + herbiLand.getName() + " a un nouveau locataire. Bienvenue a " + newDino.getName());
                     } else if (newDino instanceof Pteranodon) {
                         pteraLand.addCreature(newDino);
-                        System.out.println("Felicitations aux heureux parents, l'île " + herbiLand.getName() + " a un nouveau locataire. Bienvenue à " + newDino.getName());
+                        System.out.println("Felicitations aux heureux parents, l'ile " + herbiLand.getName() + " a un nouveau locataire. Bienvenue a " + newDino.getName());
                     } else if (newDino instanceof Spinosaure) {
                         spinoLand.addCreature(newDino);
-                        System.out.println("Felicitations aux heureux parents, l'île " + herbiLand.getName() + " a un nouveau locataire. Bienvenue à " + newDino.getName());
+                        System.out.println("Felicitations aux heureux parents, l'ile " + herbiLand.getName() + " a un nouveau locataire. Bienvenue a " + newDino.getName());
                     } else if (newDino instanceof Velociraptor) {
                         veloLand.addCreature(newDino);
-                        System.out.println("Felicitations aux heureux parents, l'île " + herbiLand.getName() + " a un nouveau locataire. Bienvenue à " + newDino.getName());
+                        System.out.println("Felicitations aux heureux parents, l'ile " + herbiLand.getName() + " a un nouveau locataire. Bienvenue a " + newDino.getName());
                     }
                     System.out.println(jurassicIsland.getNbAnimals());
                 }else{
