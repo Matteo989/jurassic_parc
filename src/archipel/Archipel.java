@@ -1,5 +1,6 @@
 package archipel;
 
+import creatures.meute.Compsognathus;
 import islands.*;
 import employees.*;
 import creatures.*;
@@ -105,6 +106,15 @@ public class Archipel<T extends Island> {
         }
         return "Il y a actuellement " + nbAnimals + " créatures dans le Jurassic Park.";
     }
+
+    public int getNbAnimals(int i) {
+        int nbAnimals = 0;
+        for(T island:islands)
+        {
+            nbAnimals += island.getNbAnimaux();
+        }
+        return nbAnimals;
+    }
 //
 //    public void nbAnimalsByIsland() {
 //        int nbAnimals = 0;
@@ -114,6 +124,20 @@ public class Archipel<T extends Island> {
 //        }
 //    }
 
+    public Creature getRandomCreature() {
+        Island ileRandom = this.getRandomIsland();
+        int creatureAleatoire = (int) (Math.random() * ileRandom.getNbAnimaux());
+        Creature creatureRandom = (Creature) ileRandom.getCreatures().get(creatureAleatoire);
+
+        return creatureRandom;
+    }
+
+    public Island getRandomIsland() {
+        int ileAleatoire = (int) (Math.random() * this.getNbIleActual()-1);
+        Island ileRandom = this.getIslands().get(ileAleatoire);
+
+        return ileRandom;
+    }
 
     public static void main(String[] args) {
         //À intervalle régulier, cette  méthode doit :
@@ -188,6 +212,10 @@ public class Archipel<T extends Island> {
         Brachiosaure BrachioFemale = new Brachiosaure("BrachioFemale", false, 1350, 60000, 11, false, false, true);
         herbiLand.addCreature(BrachioMale);
         herbiLand.addCreature(BrachioFemale);
+        Compsognathus CompsoMale = new Compsognathus("CompsoMale", true, 25, 2, 5, false, false, true, 10, 10, 10, 10, 10, null);
+        Compsognathus CompsoFemale = new Compsognathus("CompsoFemale", false, 25, 2, 4, false, false, true, 10, 10, 10, 10, 10, null);
+        compsoLand.addCreature(CompsoMale);
+        compsoLand.addCreature(CompsoFemale);
         Corythosaure CoryMale = new Corythosaure("CoryMale", true, 150, 4000, 5, false, false, true);
         Corythosaure CoryFemale = new Corythosaure("CoryFemale", false, 130, 3500, 4, false, false, true);
         herbiLand.addCreature(CoryMale);
@@ -247,6 +275,8 @@ public class Archipel<T extends Island> {
         int lower = 0;
         int higher = 100;
         while (i != 100) {
+            Creature laBete = null;
+            Island ileAnettoyer = null;
             int random = (int)(Math.random() * (higher-lower)) + lower;
             System.out.println(i);
             if (random == 0) {
@@ -257,21 +287,31 @@ public class Archipel<T extends Island> {
             } else if (random <= 30) {
                 System.out.println("Un animal crie");
             } else if (random <= 50) {
-                System.out.println("Un animal a faim.");
+                laBete = jurassicIsland.getRandomCreature();
+                laBete.setHungry(true);
+                System.out.println(laBete.getName() + " le " + laBete.getType() + " a faim.");
             } else if (random <= 60) {
-                System.out.println("Un animal est malade.");
+                laBete = jurassicIsland.getRandomCreature();
+                laBete.setHealth(false);
+                System.out.println(laBete.getName() + " le " + laBete.getType() + " est malade.");
             } else if (random <= 65) {
-                System.out.println("Un animal dort.");
+                laBete = jurassicIsland.getRandomCreature();
+                laBete.setTired(true);
+                System.out.println(laBete.getName() + " le " + laBete.getType() + " s'endort.");
             } else if (random <= 70) {
-                System.out.println("Un animal se réveille");
+                laBete = jurassicIsland.getRandomCreature();
+                laBete.setTired(false);
+                System.out.println(laBete.getName() + " le " + laBete.getType() + " se réveille");
             } else if (random <= 80) {
-                System.out.println("Un enclos est sale/abîmé");
+                ileAnettoyer = jurassicIsland.getRandomIsland();
+                ileAnettoyer.setPropreté("Mauvais");
+                System.out.println(ileAnettoyer.getName() + " est sale/abîmé");
             } else if (random <= 90) {
                 System.out.println("Un couple d'animaux a copulé et la femelle est enceinte");
             } else if (random <= 94) {
-                System.out.println("Godzilla se déplace");
+                Godzilla.getGodzilla().walk();
             } else if (random <= 99) {
-                System.out.println("Un Kaiju se déplace");
+                System.out.println("Un kaiju  se déplace");
             } else {
                 System.out.println("La purge : Godzilla et les kaijus se battent et font exploser tout le Jurassic Park Land");
                 return;

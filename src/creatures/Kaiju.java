@@ -22,5 +22,6 @@ public abstract class Kaiju extends Creature {
 			System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " n'a pas faim");
 		}
 	}
+
 	
 }

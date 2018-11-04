@@ -23,5 +23,6 @@ public class KaijuIsland<T> extends Island<T> {
             System.out.println("Le nombre maximum d'animaux à été atteint.");
         }
     }
+
 }
 
