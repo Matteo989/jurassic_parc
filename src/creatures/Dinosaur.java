@@ -13,7 +13,7 @@ public abstract class Dinosaur extends Creature {
         System.out.println("WHEN I SAY ANGER, YOU SAY FIST, ANGER FIST, ANGER FIST !");
     }
 
-    public abstract Egg layEggs();
+
 
     public boolean getRandomBoolean(){
         boolean bool;

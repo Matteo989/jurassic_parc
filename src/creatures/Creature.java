@@ -24,6 +24,8 @@ public abstract class Creature {
         this.health = health;
     }
 
+    public abstract Egg layEggs();
+
     public String getName() {
         return name;
     }
