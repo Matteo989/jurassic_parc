@@ -1,9 +1,5 @@
 package archipel;
 
-import creatures.decorator.BlindingFlash;
-import creatures.decorator.FireBlast;
-import creatures.decorator.RadioactivBlast;
-import creatures.decorator.Thunder;
 import creatures.meute.Compsognathus;
 import creatures.meute.Pack;
 import creatures.meute.strategy.*;
@@ -15,6 +11,8 @@ import regimealimentaire.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import static java.lang.Character.toLowerCase;
 
 public class Archipel<T extends Island> {
     // un archipel est un amas d'îles, îles qui sont nos enclos pour le projet.
@@ -171,7 +169,7 @@ public class Archipel<T extends Island> {
 
         // son sexe
         System.out.println("Êtes-vous un homme (M) ou une femme (F) => ");
-        char employee_gender = Character.toLowerCase(in.next().charAt(0));
+        char employee_gender = toLowerCase(in.next().charAt(0));
         while (employee_gender != 'm' && employee_gender != 'f') {
             System.out.println("Veuillez répondre par M ou F => ");
             employee_gender = in.next().charAt(0);
@@ -216,7 +214,11 @@ public class Archipel<T extends Island> {
         jurassicIsland.addIsland(kaijuLand);
         jurassicIsland.addIsland(transferIsland);
 
-        System.out.println("Bonjour " + employe_jurassic.getName() + ", bienvenue dans le Jurassic Park Land." );
+        System.out.println("Bonjour " + employe_jurassic.getName() + ", bienvenue dans le Jurassic Park Land.\n" +
+                "Vous êtes l'employé d'un Zoo d'un nouveau genre, ici pas d'animaux communs mais bel et bien des dinosaures comme au bon vieux temps.\n" +
+                "Mais en plus de ces dinosaures, nous avons décidés d'heberger également des Kaiju et leur copain Godzilla.\n" +
+                "Tout au long de votre contrat, des actions vous seront proposé, mais vous ne disposez que de 10 actions avant de pouvoir vous reposer.\n" +
+                "En effet, s'occuper de dinosaures et plus laborieux que des animaux classiques. \nFaîtes les bons choix.");
 
         //On créé deux dinosaures de chaque espèces. Puis un seul kaiju de chaque et un Godzilla.
         Ankylosaure AnkyMale = new Ankylosaure("AnkyMale", true, 250, 6000, 8, false, false, true);
@@ -300,34 +302,24 @@ public class Archipel<T extends Island> {
         int lower = 0;
         int higher = 100;
         int nbActionEmploye = 0;
-        while (i != 100) {
+        while (i != 200) {
             Creature laBete = null;
             Island ileAnettoyer = null;
             char response = ' ';
             int random = (int)(Math.random() * (higher-lower)) + lower;
-            int random2 = (int)(Math.random() * (1 - 4));
-            System.out.println(i);
+
+            System.out.println("\n");
+
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
             if (random == 0) {
                 System.out.println("Une énorme météorite explose sur l'île principale de Jurassic Park Land détruisant tous les animaux.");
                 return;
-            }else if (random >= 1 && random <=2) {
-                if(random2 == 1){
-                    RadioactivBlast radioactivBlast = new RadioactivBlast(godzilla);
-                    radioactivBlast.useSpell();
-                }
-                else if(random2 == 2){
-                    Thunder thunder = new Thunder(ghidorah);
-                    thunder.useSpell();
-                }
-                else if(random2 == 3){
-                    FireBlast fireBlast = new FireBlast(rodan);
-                    fireBlast.useSpell();
-                }
-                else if(random2 == 4){
-                    BlindingFlash blindingFlash = new BlindingFlash(mithra);
-                    blindingFlash.useSpell();
-                }
-            }            else if (random <= 15){
+            } else if (random <= 15){
                 CompsoFemale.setHowlStrategy(agressivHowl);
                 CompsoMale.setHowlStrategy(agressivHowl);
                 laBete = jurassicIsland.getRandomCreature();
@@ -343,7 +335,7 @@ public class Archipel<T extends Island> {
                 laBete.setHungry(true);
                 System.out.println(laBete.getName() + " le " + laBete.getType() + " a faim.");
                 System.out.println("Voulez-vous le nourrir ? O / N => ");
-                response = Character.toLowerCase(in.next().charAt(0));
+                response = toLowerCase(in.next().charAt(0));
                 while (response != 'o' && response != 'n') {
                     System.out.println("Veuillez répondre par O ou N => ");
                     response = in.next().charAt(0);
@@ -362,7 +354,7 @@ public class Archipel<T extends Island> {
                 laBete.setHealth(false);
                 System.out.println(laBete.getName() + " le " + laBete.getType() + " est malade.");
                 System.out.println("Voulez-vous le soigner ? O / N => ");
-                response = Character.toLowerCase(in.next().charAt(0));
+                response = toLowerCase(in.next().charAt(0));
                 while (response != 'o' && response != 'n') {
                     System.out.println("Veuillez répondre par O ou N => ");
                     response = in.next().charAt(0);
@@ -385,12 +377,26 @@ public class Archipel<T extends Island> {
                 System.out.println(laBete.getName() + " le " + laBete.getType() + " s'endort.");
             } else if (random <= 70) {
                 laBete = jurassicIsland.getRandomCreature();
-                laBete.setTired(false);
-                System.out.println(laBete.getName() + " le " + laBete.getType() + " se réveille");
+                if (laBete.isTired() == true) {
+                    laBete.setTired(false);
+                    System.out.println(laBete.getName() + " le " + laBete.getType() + " se réveille");
+                }
             } else if (random <= 80) {
                 ileAnettoyer = jurassicIsland.getRandomIsland();
                 ileAnettoyer.setPropreté("Mauvais");
-                System.out.println(ileAnettoyer.getName() + " est sale/abîmé");
+                System.out.println(ileAnettoyer.getName() + " est sale/abîmé, voulez-vous le nettoyer ? O / N =>");
+                response = toLowerCase(in.next().charAt(0));
+                while (response != 'o' && response != 'n') {
+                    System.out.println("Veuillez répondre par O ou N => ");
+                    response = in.next().charAt(0);
+                }
+                if (response == 'o' && nbActionEmploye < 10) {
+                    employe_jurassic.cleanIsland(ileAnettoyer, transferIsland);
+                    nbActionEmploye++;
+                } else if (nbActionEmploye >= 10){
+                    System.out.println("L'employé est fatigué et doit se repose.");
+                    nbActionEmploye = 0;
+                }
             } else if (random <= 90) {
                 laBete = jurassicIsland.getRandomCreature();
 
@@ -435,13 +441,8 @@ public class Archipel<T extends Island> {
                 System.out.println("La purge : Godzilla et les kaijus se battent et font exploser tout le Jurassic Park Land");
                 return;
             }
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
 
-            if (i == 30 || i == 60 || i == 90) {
+            if (i%30 == 0) {
                 jurassicIsland.getOldAllCreature();
             }
             i++;
