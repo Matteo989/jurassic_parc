@@ -1,5 +1,9 @@
 package archipel;
 
+import creatures.decorator.BlindingFlash;
+import creatures.decorator.FireBlast;
+import creatures.decorator.RadioactivBlast;
+import creatures.decorator.Thunder;
 import creatures.meute.Compsognathus;
 import creatures.meute.Pack;
 import creatures.meute.strategy.*;
@@ -301,12 +305,29 @@ public class Archipel<T extends Island> {
             Island ileAnettoyer = null;
             char response = ' ';
             int random = (int)(Math.random() * (higher-lower)) + lower;
-
+            int random2 = (int)(Math.random() * (1 - 4));
             System.out.println(i);
             if (random == 0) {
                 System.out.println("Une énorme météorite explose sur l'île principale de Jurassic Park Land détruisant tous les animaux.");
                 return;
-            } else if (random <= 15){
+            }else if (random >= 1 && random <=2) {
+                if(random2 == 1){
+                    RadioactivBlast radioactivBlast = new RadioactivBlast(godzilla);
+                    radioactivBlast.useSpell();
+                }
+                else if(random2 == 2){
+                    Thunder thunder = new Thunder(ghidorah);
+                    thunder.useSpell();
+                }
+                else if(random2 == 3){
+                    FireBlast fireBlast = new FireBlast(rodan);
+                    fireBlast.useSpell();
+                }
+                else if(random2 == 4){
+                    BlindingFlash blindingFlash = new BlindingFlash(mithra);
+                    blindingFlash.useSpell();
+                }
+            }            else if (random <= 15){
                 CompsoFemale.setHowlStrategy(agressivHowl);
                 CompsoMale.setHowlStrategy(agressivHowl);
                 laBete = jurassicIsland.getRandomCreature();

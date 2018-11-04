@@ -17,7 +17,7 @@ public class Corythosaure extends Herbivorous implements Terrestrial {
 	@Override
 	public Egg layEggs() {
 		int i = 1;
-		Corythosaure son = new Corythosaure("CorythosaureChild" +i, getRandomBoolean(), 10,10,10, true, true, true);
+		Corythosaure son = new Corythosaure("CorythosaureChild" +i, getRandomBoolean(), 10,10,0, true, true, true);
 		i++;
 		return new Egg(10, son);
 

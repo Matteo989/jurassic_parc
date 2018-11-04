@@ -83,7 +83,7 @@ public class Compsognathus extends Carnivorous implements Terrestrial {
 	public Egg layEggs() {
 		int i = 1;
 		BasicHowlStrategy basicHowl = new BasicHowlStrategy();
-		Compsognathus son = new Compsognathus("CompsognathusChild" +1 , getRandomBoolean(), 10,10,10, true, true, true,10,10,'w',10,10,this.pack, basicHowl);
+		Compsognathus son = new Compsognathus("CompsognathusChild" +1 , getRandomBoolean(), 10,10,0, true, true, true,10,10,'w',10,10,this.pack, basicHowl);
 		i++;
 		return new Egg(10, son);
 
@@ -184,9 +184,6 @@ public class Compsognathus extends Carnivorous implements Terrestrial {
 				}
 				compsognathus.setHeat(false);
 				this.setHeat(false);
-			}
-			else if(howlStrategy instanceof DominanceHowlStrategy){
-				System.out.println("Tout les loups de la meute attaquent ensemble");
 			}
         }
     }
