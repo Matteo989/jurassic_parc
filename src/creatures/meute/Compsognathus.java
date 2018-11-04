@@ -1,10 +1,8 @@
 package creatures.meute;
-import creatures.Ankylosaure;
 import creatures.Egg;
+import creatures.meute.strategy.HowlStrategy;
 import typedinosaure.*;
 import regimealimentaire.*;
-
-import java.util.*;
 
 public class Compsognathus extends Carnivorous implements Terrestrial {
 
@@ -46,8 +44,11 @@ public class Compsognathus extends Carnivorous implements Terrestrial {
 
 	@Override
 	public Egg layEggs() {
-		Compsognathus son = new Compsognathus("CompsognathusSon", getRandomBoolean(), 10,10,10, true, true, true,10,10,10,10,10,this.pack);
+		int i = 1;
+		Compsognathus son = new Compsognathus("CompsognathusChild" +1 , getRandomBoolean(), 10,10,10, true, true, true,10,10,10,10,10,this.pack);
+		i++;
 		return new Egg(10, son);
+
 	}
 
     public void setHowlStrategy(HowlStrategy howlStrategy) {

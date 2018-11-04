@@ -16,7 +16,9 @@ public class Diplodocus extends Herbivorous implements Terrestrial {
 
     @Override
     public Egg layEggs() {
-        Diplodocus son = new Diplodocus("DiplodocuSon", getRandomBoolean(), 10,10,10, true, true, true);
+        int i = 1;
+        Diplodocus son = new Diplodocus("DiplodocuChild" +i, getRandomBoolean(), 10,10,10, true, true, true);
+        i++;
         return new Egg(10, son);
     }
 

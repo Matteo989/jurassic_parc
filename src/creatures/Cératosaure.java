@@ -17,7 +17,9 @@ public class Cératosaure extends Carnivorous implements Terrestrial {
 
 	@Override
 	public Egg layEggs() {
-		Cératosaure son = new Cératosaure("CératosaureSon", getRandomBoolean(), 10,10,10, true, true, true);
+		int i = 1;
+		Cératosaure son = new Cératosaure("CératosaureChild" + i, getRandomBoolean(), 10,10,10, true, true, true);
+		i++;
 		return new Egg(10, son);
 	}
 

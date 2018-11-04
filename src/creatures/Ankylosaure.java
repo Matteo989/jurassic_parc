@@ -16,7 +16,9 @@ public class Ankylosaure extends Herbivorous implements Terrestrial {
 
 	@Override
 	public Egg layEggs() {
-		Ankylosaure son = new Ankylosaure("AnkilosaureSon", getRandomBoolean(), 10,10,10, true, true, true);
+	    int i =1;
+		Ankylosaure son = new Ankylosaure("AnkilosaureChild" + i, getRandomBoolean(), 10,10,10, true, true, true);
+		i++;
 		return new Egg(10, son);
 	}
 

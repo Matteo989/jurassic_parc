@@ -21,7 +21,9 @@ public class Ptéranodon extends Omnivorous implements Flying{
 
 	@Override
 	public Egg layEggs() {
-		Ptéranodon son = new Ptéranodon("PtéranodonSon", getRandomBoolean(), 10,10,10, true, true, true);
+		int i = 1;
+		Ptéranodon son = new Ptéranodon("PtéranodonChild" +i, getRandomBoolean(), 10,10,10, true, true, true);
+		i++;
 		return new Egg(10, son);
 	}
 

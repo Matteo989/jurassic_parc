@@ -18,7 +18,9 @@ public class Tyrannosaure extends Carnivorous implements Terrestrial{
 
 	@Override
 	public Egg layEggs() {
-		Tyrannosaure son = new Tyrannosaure("TyrannosaureSon", getRandomBoolean(), 10,10,10, true, true, true);
+		int i = 1;
+		Tyrannosaure son = new Tyrannosaure("TyrannosaureChild" + i, getRandomBoolean(), 10,10,10, true, true, true);
+		++i;
 		return new Egg(10, son);
 	}
 	@Override
