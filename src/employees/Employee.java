@@ -66,7 +66,7 @@ public class Employee {
             return;
         } else {
             this.moveAnimal(island, transferIsland);
-            System.out.println("L'île est vide et commence à être nettoyée");
+            System.out.println("L'île a été vidée et commence à être nettoyée");
             island.setPropreté("Bon");
             System.out.println("L'île " + island.getName() + " est propre.");
             this.moveAnimal(transferIsland, island);
