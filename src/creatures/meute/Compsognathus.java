@@ -1,3 +1,8 @@
+/**
+ * Classe qui gère toute les autres classes
+ * @author Lou Byrnes, Matthieu Nourry
+ * @version 1.0
+ */
 package creatures.meute;
 import creatures.Egg;
 import creatures.meute.strategy.BasicHowlStrategy;
@@ -42,11 +47,15 @@ public class Compsognathus extends Carnivorous implements Terrestrial {
 
 	}
 
+	/**
+	 * Méthode de calcul du rang de dominance
+	 */
 	public void calculateDominanceRank(){
 		boolean bool = true;
 		for(Compsognathus compsognathus:pack.getPack()){
-			if (this.strength > compsognathus.strength){
-				if((int) this.dominanceRank < (int) compsognathus.dominanceRank) {
+			if (this.strength > compsognathus.strength){ //si le compsognathus a une force supérieur a n'importe quels autre compsognathus de sa meute
+				if((int) this.dominanceRank < (int) compsognathus.dominanceRank) { //et que son dominanceRank est inférieur a l'autre
+					//alors On switch les rangs de dominance
 					char tmp = this.dominanceRank;
 					this.dominanceRank = compsognathus.dominanceRank;
 					compsognathus.dominanceRank = tmp;
@@ -59,6 +68,10 @@ public class Compsognathus extends Carnivorous implements Terrestrial {
 			this.dominanceRank = 'a';
 		}
 	}
+
+	/**
+	 * Méthode de calcul de la catégorie des loups
+	 */
 	public void calculateCategorie(){
 		if(this.getAge() <= 2)
 			this.catAge = "Jeune";
@@ -68,6 +81,9 @@ public class Compsognathus extends Carnivorous implements Terrestrial {
 			this.catAge = "Vieux";
 	}
 
+	/**
+	 * Méthode de calcul du level
+	 */
 	public void calculateLevel(){
 		int asciiCode = (int)dominanceRank;
 		if(this.catAge == "Jeune" || this.catAge == "Vieux") {
@@ -79,6 +95,9 @@ public class Compsognathus extends Carnivorous implements Terrestrial {
 	}
 
 
+	/**
+	 * Méthode qui créer un oeuf de Compsognathus
+	 */
 	@Override
 	public Egg layEggs() {
 		int i = 1;
@@ -163,14 +182,17 @@ public class Compsognathus extends Carnivorous implements Terrestrial {
 	}
 
 
-
+	/**
+	 * Méthode du cri du compsognathus
+	 */
     public void howl (){
 		Egg egg;
 	    howlStrategy.howl(this);
 	    for(Compsognathus compsognathus:pack.getPack()){
-	        compsognathus.hear();
+	        compsognathus.hear(); //Tout les compsognathus de la meute entendent le cri
 			if((howlStrategy instanceof HeatHowlStrategy && this.heat == true && this.isSex() == false && compsognathus.isSex() == true) ||
-					(howlStrategy instanceof HeatHowlStrategy && this.heat == true && this.isSex() == true && compsognathus.isSex() == false)){
+					(howlStrategy instanceof HeatHowlStrategy && this.heat == true && this.isSex() == true && compsognathus.isSex() == false)) //si son cri est un cri de chaleur et qu'un autre compsognathus est deja en chaleur, alors ils font un oeuf
+				{
 				System.out.println("Le compsognathus " + compsognathus.getName() + " s'accouple avec le compsognathus " + this.getName() + " en chaleur");
 				if(this.isSex() == false) {
 					System.out.println("La compsognathus + " + this.getName() + " + fait un oeuf");
@@ -187,11 +209,16 @@ public class Compsognathus extends Carnivorous implements Terrestrial {
 			}
         }
     }
-
+	/**
+	 * Méthode de soumission
+	 */
 	public void submission(){
 		this.dominanceFactor -= 1;
 	}
 
+	/**
+	 * Méthode de dominance
+	 */
 	public void dominate(Compsognathus compsognathus){
 		if(this.impetuosity >= compsognathus.impetuosity){
 			if(this.level > compsognathus.level){

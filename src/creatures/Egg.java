@@ -1,3 +1,8 @@
+/**
+ * Classe qui gère toute les autres classes
+ * @author Lou Byrnes, Matthieu Nourry
+ * @version 1.0
+ */
 package creatures;
 
 import static java.lang.Thread.sleep;

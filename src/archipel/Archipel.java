@@ -1,3 +1,8 @@
+/**
+ * Classe qui gère toute les autres classes
+ * @author Lou Byrnes, Matthieu Nourry
+ * @version 1.0
+ */
 package archipel;
 
 import creatures.meute.Compsognathus;
@@ -85,6 +90,10 @@ public class Archipel<T extends Island> {
         this.islands = islands;
     }
 
+    /**
+     * ajoute une ile a l'archipel ou renvoie un message d'erreur
+     *  @param island
+     */
     public void addIsland(T island) {
         if (island instanceof Island) {
             this.getIslands().add(island);
@@ -94,13 +103,19 @@ public class Archipel<T extends Island> {
         }
     }
 
+    /**
+     * affiche les informations sur les iles de l'archipel
+     */
     public void afficherInfos(){
         System.out.println(this.toString());
         for (T iles : islands) {
             System.out.println(iles.toString());
         }
     }
-
+    /**
+     * Renvoie le nombre d'animaux au total dans l'archipel
+     * @return String dans laquelle il y a le nombre d'animaux
+     */
     public String getNbAnimals() {
         int nbAnimals = 0;
         for(T island:islands)
@@ -110,14 +125,6 @@ public class Archipel<T extends Island> {
         return "Il y a actuellement " + nbAnimals + " creatures dans le Jurassic Park.";
     }
 
-    public int getNbAnimals(int i) {
-        int nbAnimals = 0;
-        for(T island:islands)
-        {
-            nbAnimals += island.getNbAnimaux();
-        }
-        return nbAnimals;
-    }
 //
 //    public void nbAnimalsByIsland() {
 //        int nbAnimals = 0;
@@ -127,7 +134,10 @@ public class Archipel<T extends Island> {
 //        }
 //    }
 
-
+    /**
+     * renvoie une créature au hasard de notre archipel
+     *  @return creatureRandom
+     */
     public Creature getRandomCreature() {
         Island ileRandom = this.getRandomIsland();
         int creatureAleatoire = (int) (Math.random() * ileRandom.getNbAnimaux());
@@ -136,6 +146,10 @@ public class Archipel<T extends Island> {
         return creatureRandom;
     }
 
+    /**
+     *  renvoie une ile au hasard parmis toutes les iles de l'archipel
+     *  @return Island
+     */
     public Island getRandomIsland() {
         int ileAleatoire = (int) (Math.random() * this.getNbIleActual()-1);
         Island ileRandom = this.getIslands().get(ileAleatoire);
@@ -143,12 +157,19 @@ public class Archipel<T extends Island> {
         return ileRandom;
     }
 
+    /**
+     * fait vieillir toutes les créatures d'un an
+     */
     public void getOldAllCreature(){
         for (T island:islands){
             island.getOldCreatures();
         }
     }
 
+    /**
+     * fonction main
+     * @param args
+     */
     public static void main(String[] args) {
         //À intervalle regulier, cette  methode doit :
         //modifier aleatoirement l’etat de certains animaux (les rendre malades, les endormir, etc.)

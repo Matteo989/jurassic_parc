@@ -1,6 +1,11 @@
 package islands;
 
 import regimealimentaire.Omnivorous;
+/**
+ * Classe qui gère toute les autres classes
+ * @author Lou Byrnes, Matthieu Nourry
+ * @version 1.0
+ */
 import typedinosaure.Flying;
 
 import java.util.ArrayList;
