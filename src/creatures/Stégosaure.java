@@ -15,6 +15,11 @@ public class Stégosaure extends Herbivorous implements Terrestrial {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	public Egg layEggs() {
+		Stégosaure son = new Stégosaure("StégosaureSon", getRandomBoolean(), 10,10,10, true, true, true);
+		return new Egg(10, son);
+	}
 
 	@Override
 	public void walk() {

@@ -20,6 +20,12 @@ public class Ptéranodon extends Omnivorous implements Flying{
 	}
 
 	@Override
+	public Egg layEggs() {
+		Ptéranodon son = new Ptéranodon("PtéranodonSon", getRandomBoolean(), 10,10,10, true, true, true);
+		return new Egg(10, son);
+	}
+
+	@Override
 	public void eatEverything() {
 		if(!this.isTired() && this.isHungry()) {
 			System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " mange du poisson et de la viande.");
