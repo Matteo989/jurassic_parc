@@ -255,9 +255,6 @@ public class Archipel<T extends Island> {
         Parasaurolophus ParaFemale = new Parasaurolophus("ParaFemale", false, 600, 2000, 7, false, false, true);
         herbiLand.addCreature(ParaMale);
         herbiLand.addCreature(ParaFemale);
-
-        //a gerer l'envergure d'un pteranodon au lieu de la hauteur / taille
-
         Pteranodon PteraMale = new Pteranodon("PteraMale", true, 150, 4000, 5, false, false, true);
         Pteranodon PteraFemale = new Pteranodon("PteraFemale", false, 130, 3500, 4, false, false, true);
         pteraLand.addCreature(PteraMale);
@@ -447,32 +444,5 @@ public class Archipel<T extends Island> {
             }
             i++;
         }
-//        Marc.getDinosaurState();
-//        Marc.walk();
-//        Marc.eatMeat();
-//        Marc.eatMeat();
-//        Marc.getDinosaurState();
-
-//        getGodzilla().nager();
-//        getGodzilla().walk();
-//        System.out.println(getGodzilla().getType()); // return Godzilla
-
-//        Neiko.walk();
-//        Neiko.getDinosaurState();
-//        Neiko.eatVegetables();
-
-//        employee.cleanIsland(herbiland, transferIsland);
-
-//        Pack meute = new Pack("Meute de petit dinosaures");
-//        Compsognathus compsognathus = new Compsognathus("Spot", true, 2, 10, 5, false, false, true, 10, 1, 10, 1, 1, meute);
-//        Compsognathus c1 = new Compsognathus("Myrtille", false, 2, 10, 5, false, false, true, 10, 5, 5, 10, 1, meute);
-//        meute.addCompsognathusToMeute(compsognathus);
-//        meute.addCompsognathusToMeute(c1);
-//
-//
-//        HowlStrategy heatHowlStrategy = new HeatHowlStrategy();
-//        compsognathus.setHowlStrategy(heatHowlStrategy);
-//        compsognathus.howl();
-
     }
 }
