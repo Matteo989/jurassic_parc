@@ -15,6 +15,11 @@ public class Spinosaure extends Omnivorous implements Marine, Terrestrial {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	public Egg layEggs() {
+		Spinosaure son = new Spinosaure("SpinosaureSon", getRandomBoolean(), 10,10,10, true, true, true);
+		return new Egg(10, son);
+	}
 
 	@Override
 	public void walk() {

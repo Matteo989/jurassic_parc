@@ -13,6 +13,17 @@ public abstract class Dinosaur extends Creature {
         System.out.println("WHEN I SAY ANGER, YOU SAY FIST, ANGER FIST, ANGER FIST !");
     }
 
+    public abstract Egg layEggs();
+
+    public boolean getRandomBoolean(){
+        boolean bool;
+        if( Math.round(Math.random()) <= 0.5)
+            bool = true;
+        else
+            bool = false;
+        return bool;
+    }
+
     public void getDinosaurState() {
         if (this.isHungry()) {
             System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " a faim.");
