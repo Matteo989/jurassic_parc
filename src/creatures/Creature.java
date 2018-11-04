@@ -26,6 +26,10 @@ public abstract class Creature {
 
     public abstract Egg layEggs();
 
+    public void getOld(){
+        this.setAge(this.getAge() + 1);
+    }
+
     public String getName() {
         return name;
     }

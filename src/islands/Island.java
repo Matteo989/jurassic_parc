@@ -30,6 +30,12 @@ public abstract class Island<T>{
         }
     }
 
+    public void getOldCreatures(){
+        for (T creature:this.creatures){
+            ((Creature) creature).getOld();
+        }
+    }
+
     public String getName() {
         return name;
     }

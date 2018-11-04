@@ -16,7 +16,9 @@ public class Tricératops extends Herbivorous implements Terrestrial {
 
 	@Override
 	public Egg layEggs() {
-		Tricératops son = new Tricératops("TricératopsSon", getRandomBoolean(), 10,10,10, true, true, true);
+		int i = 1;
+		Tricératops son = new Tricératops("TricératopsChild" + i, getRandomBoolean(), 10,10,10, true, true, true);
+		i++;
 		return new Egg(10, son);
 	}
 

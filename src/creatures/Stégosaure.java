@@ -17,7 +17,9 @@ public class Stégosaure extends Herbivorous implements Terrestrial {
 
 	@Override
 	public Egg layEggs() {
-		Stégosaure son = new Stégosaure("StégosaureSon", getRandomBoolean(), 10,10,10, true, true, true);
+		int i = 1;
+		Stégosaure son = new Stégosaure("StégosaureChild" + i, getRandomBoolean(), 10,10,10, true, true, true);
+		i++;
 		return new Egg(10, son);
 	}
 

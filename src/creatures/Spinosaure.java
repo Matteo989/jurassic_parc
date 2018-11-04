@@ -17,7 +17,9 @@ public class Spinosaure extends Omnivorous implements Marine, Terrestrial {
 
 	@Override
 	public Egg layEggs() {
-		Spinosaure son = new Spinosaure("SpinosaureSon", getRandomBoolean(), 10,10,10, true, true, true);
+		int i = 1;
+		Spinosaure son = new Spinosaure("SpinosaureChild" + i, getRandomBoolean(), 10,10,10, true, true, true);
+		i++;
 		return new Egg(10, son);
 	}
 

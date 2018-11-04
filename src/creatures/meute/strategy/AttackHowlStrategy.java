@@ -1,6 +1,8 @@
-package creatures.meute;
+package creatures.meute.strategy;
 
-public class AttackHowlStrategy implements HowlStrategy{
+import creatures.meute.Compsognathus;
+
+public class AttackHowlStrategy implements HowlStrategy {
 
     @Override
     public void howl(Compsognathus compsognathus) {

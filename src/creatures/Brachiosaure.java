@@ -16,7 +16,9 @@ public class Brachiosaure extends Herbivorous implements Terrestrial {
 
 	@Override
 	public Egg layEggs() {
-		Brachiosaure son = new Brachiosaure("BrachiosaureSon", getRandomBoolean(), 10,10,10, true, true, true);
+		int i = 1;
+		Brachiosaure son = new Brachiosaure("BrachiosaureChild" +i, getRandomBoolean(), 10,10,10, true, true, true);
+		i++;
 		return new Egg(10, son);
 	}
 
