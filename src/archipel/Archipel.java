@@ -139,12 +139,19 @@ public class Archipel<T extends Island> {
         return ileRandom;
     }
 
+    public void getOldAllCreature(){
+        for (T island:islands){
+            island.getOldCreatures();
+        }
+    }
+
     public static void main(String[] args) {
         //À intervalle régulier, cette  méthode doit :
         //modifier aléatoirement l’état de certains animaux (les rendre malades, les endormir, etc.)
         //modifier aléatoirement l’état de certains enclos (leur propreté, leur salinité, etc.)
         //passer la main à l'employé (et donc à l’utilisateur) pour qu'il s'occupe du zoo
         // (son namebre d’action par intervalle de temps devant être limité)
+
 
 
         //Lors du démarrage de l'application demande a l'utilisateur son nom
