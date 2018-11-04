@@ -14,7 +14,7 @@ public abstract class Kaiju extends Creature {
 		if(!this.isTired() && this.isHungry()) {
 			System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " mange de tout");
 			this.setHungry(false);
-			System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " a bien mangé");
+			System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " a bien mange");
 			this.setTired(true);
 		} else if (this.isTired()) {
 			System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " est endormi et ne peut pas manger.");

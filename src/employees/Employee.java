@@ -54,35 +54,35 @@ public class Employee {
     }
 
     public void cleanIsland(Island island, TransferIsland transferIsland) {
-        if (island.getPropreté() == "Bon" && island.getPropreté() == "Correct") {
-            System.out.println("L'île " + island.getName() + " et propre et ne doit pas être nettoyée.");
+        if (island.getProprete() == "Bon" && island.getProprete() == "Correct") {
+            System.out.println("L'île " + island.getName() + " et propre et ne doit pas être nettoyee.");
             return;
         } else if (island instanceof HerbivorousIsland) {
-            System.out.println("L'employé " + this.getName() + " commence a nettoyer l'île " + island.getName());
-            island.setPropreté("Bon");
+            System.out.println("L'employe " + this.getName() + " commence a nettoyer l'île " + island.getName());
+            island.setProprete("Bon");
             System.out.println("L'île " + island.getName() + " est propre.");
         } else if (transferIsland.getNbAnimaux() != 0) {
-            System.out.println("L'île de transfers est déjà utilisée, attendez que les créatures actuellement présentes retournent dans leur enclos.");
+            System.out.println("L'île de transfers est dejà utilisee, attendez que les creatures actuellement presentes retournent dans leur enclos.");
             return;
         } else {
             this.moveAnimal(island, transferIsland);
-            System.out.println("L'île a été vidée et commence à être nettoyée");
-            island.setPropreté("Bon");
+            System.out.println("L'île a ete videe et commence à être nettoyee");
+            island.setProprete("Bon");
             System.out.println("L'île " + island.getName() + " est propre.");
             this.moveAnimal(transferIsland, island);
         }
     }
 
     public void feedAnimals(Creature creature) {
-        System.out.println("L'employé commence a nourrir " + creature.getName());
+        System.out.println("L'employe commence a nourrir " + creature.getName());
         creature.setHungry(false);
-        System.out.println(creature.getName() + " a bien mangé");
+        System.out.println(creature.getName() + " a bien mange");
     }
 
     public void healAnimals(Creature creature) {
-        System.out.println("L'employé commence a soigner " + creature.getName());
+        System.out.println("L'employe commence a soigner " + creature.getName());
         creature.setHealth(true);
-        System.out.println(creature.getName() + " est de nouveau en bonne santé.");
+        System.out.println(creature.getName() + " est de nouveau en bonne sante.");
     }
 
     public void moveAnimal(Island pastIsland, Island newIsland) {

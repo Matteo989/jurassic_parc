@@ -9,8 +9,8 @@ import java.util.ArrayList;
 
 public class HerbivorousIsland<T> extends Island<T> {
 
-    public HerbivorousIsland(String name, int area, int animauxMax, int nbAnimaux, String propreté, ArrayList creatures) {
-        super(name, area, animauxMax, nbAnimaux, propreté, creatures);
+    public HerbivorousIsland(String name, int area, int animauxMax, int nbAnimaux, String proprete, ArrayList creatures) {
+        super(name, area, animauxMax, nbAnimaux, proprete, creatures);
     }
 
     @Override
@@ -19,17 +19,17 @@ public class HerbivorousIsland<T> extends Island<T> {
             if (creature instanceof Herbivorous) {
                 for (T myCreature : getCreatures()) {
                     if (myCreature == creature) {
-                        System.out.println("La créature " + creature + " est deja dans l'enclos");
+                        System.out.println("La creature " + creature + " est deja dans l'enclos");
                         return;
                     }
                 }
                 this.getCreatures().add(creature);
                 this.setNbAnimaux(getNbAnimaux() + 1);
             } else {
-                System.out.println(creature.getClass().getSimpleName() + " ne peut pas être ajouté a l'ile");
+                System.out.println(creature.getClass().getSimpleName() + " ne peut pas être ajoute a l'ile");
             }
         } else {
-            System.out.println("Le nombre maximum d'animaux à été atteint.");
+            System.out.println("Le nombre maximum d'animaux à ete atteint.");
         }
     }
 }

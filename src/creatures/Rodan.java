@@ -5,7 +5,7 @@ import typedinosaure.*;
 
 public class Rodan extends Kaiju implements Flying{
 
-	private static volatile Rodan rodan = null; //volatile pour gérer les thread
+	private static volatile Rodan rodan = null; //volatile pour gerer les thread
 	
 	public static Rodan getRodan() {
 		if(rodan == null) {
@@ -24,7 +24,7 @@ public class Rodan extends Kaiju implements Flying{
 		this.setHungry(false);
 		this.setTired(false);
 		this.setHealth(true);
-	} //Contructeur privé pour le singleton 
+	} //Contructeur prive pour le singleton
 	
 	
 	@Override
@@ -33,7 +33,7 @@ public class Rodan extends Kaiju implements Flying{
 	}
 
 	public void howl (){
-		System.out.println("La créature " + this.getName() + " pousse un cri");
+		System.out.println("La creature " + this.getName() + " pousse un cri");
 	}
 	@Override
 	public Egg layEggs() {

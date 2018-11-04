@@ -3,13 +3,13 @@ package creatures;
 import typedinosaure.*;
 import regimealimentaire.*;
 
-public class Cératosaure extends Carnivorous implements Terrestrial {
+public class Ceratosaure extends Carnivorous implements Terrestrial {
 
 
-	public Cératosaure() {
+	public Ceratosaure() {
 	}
 
-	public Cératosaure(String name, boolean sex, double height, double weight, int age, boolean hungry,
+	public Ceratosaure(String name, boolean sex, double height, double weight, int age, boolean hungry,
 					   boolean tired, boolean health) {
 		super(name, sex, height, weight, age, hungry, tired, health);
 		// TODO Auto-generated constructor stub
@@ -18,7 +18,7 @@ public class Cératosaure extends Carnivorous implements Terrestrial {
 	@Override
 	public Egg layEggs() {
 		int i = 1;
-		Cératosaure son = new Cératosaure("CératosaureChild" + i, getRandomBoolean(), 10,10,0, true, true, true);
+		Ceratosaure son = new Ceratosaure("CeratosaureChild" + i, getRandomBoolean(), 10,10,0, true, true, true);
 		i++;
 		return new Egg(10, son);
 	}

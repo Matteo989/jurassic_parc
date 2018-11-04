@@ -17,11 +17,11 @@ public class BlindingFlash extends DecorateurKaiju {
 
     @Override
     public void move() {
-        System.out.println("Le kaiju se met en position pour utiliser son attaque spéciale");
+        System.out.println("Le kaiju se met en position pour utiliser son attaque speciale");
     }
 
     @Override
     public void howl() {
-        System.out.println("Le kaiju se prépare a utiliser son rayon lumineux et pousse un hurlement qui fait trembler la terre");
+        System.out.println("Le kaiju se prepare a utiliser son rayon lumineux et pousse un hurlement qui fait trembler la terre");
     }
 }

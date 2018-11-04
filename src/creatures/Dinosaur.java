@@ -32,20 +32,20 @@ public abstract class Dinosaur extends Creature {
         }
 
         if (this.isHealth()) {
-            System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " est en bonne santé.");
+            System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " est en bonne sante.");
         } else {
             System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " est malade.");
         }
 
         if (this.isTired()) {
-            System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " est fatigué.");
+            System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " est fatigue.");
         } else {
-            System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " n'est pas fatigué.");
+            System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " n'est pas fatigue.");
         }
     }
 
 
     public void howl (){
-        System.out.println("La créature " + this.getName() + " pousse un cri");
+        System.out.println("La creature " + this.getName() + " pousse un cri");
     }
 }

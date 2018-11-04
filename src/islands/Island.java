@@ -9,19 +9,19 @@ public abstract class Island<T>{
     private int area;
     private int animauxMax;
     private int nbAnimaux;
-    private String propreté; //Mauvais, Bon, Correct
+    private String proprete; //Mauvais, Bon, Correct
     private ArrayList<T> creatures;
 
     public Island(){
 
     }
 
-    public Island(String name, int area, int animauxMax, int nbAnimaux, String propreté, ArrayList<T> creatures) {
+    public Island(String name, int area, int animauxMax, int nbAnimaux, String proprete, ArrayList<T> creatures) {
         this.name = name;
         this.area = area;
         this.animauxMax = animauxMax;
         this.nbAnimaux = nbAnimaux;
-        this.propreté = propreté;
+        this.proprete = proprete;
         this.creatures = creatures;
         if(creatures != null) {
             this.creatures = creatures;
@@ -68,12 +68,12 @@ public abstract class Island<T>{
         this.nbAnimaux = nbAnimaux;
     }
 
-    public String getPropreté() {
-        return propreté;
+    public String getProprete() {
+        return proprete;
     }
 
-    public void setPropreté(String propreté) {
-        this.propreté = propreté;
+    public void setProprete(String proprete) {
+        this.proprete = proprete;
     }
 
     public ArrayList<T> getCreatures() {
@@ -121,7 +121,7 @@ public abstract class Island<T>{
                 ", area=" + area +
                 ", animauxMax=" + animauxMax +
                 ", nbAnimaux=" + nbAnimaux +
-                ", propreté='" + propreté + '\'' +
+                ", proprete='" + proprete + '\'' +
                 ", creatures=" + creatures +
                 '}';
     }

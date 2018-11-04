@@ -196,8 +196,8 @@ public class Compsognathus extends Carnivorous implements Terrestrial {
 		if(this.impetuosity >= compsognathus.impetuosity){
 			if(this.level > compsognathus.level){
 				//Le compsognathus se soummet
-				this.dominanceFactor += 1;  //on incrémente le facteur de domination
-				char tampon = compsognathus.dominanceRank; //on échange les rangs de domination
+				this.dominanceFactor += 1;  //on incremente le facteur de domination
+				char tampon = compsognathus.dominanceRank; //on echange les rangs de domination
 				compsognathus.dominanceRank = this.dominanceRank;
 				this.dominanceRank = tampon;
 				compsognathus.submission();
@@ -233,7 +233,7 @@ public class Compsognathus extends Carnivorous implements Terrestrial {
 
 
 	public void die(Compsognathus compsognathus){
-        System.out.println("Le compsognathus " + compsognathus.getName() + " décide de quitter la meute pour aller mourir");
+        System.out.println("Le compsognathus " + compsognathus.getName() + " decide de quitter la meute pour aller mourir");
 	    pack.leaveMeute(compsognathus);
     }
 

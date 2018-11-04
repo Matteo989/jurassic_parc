@@ -20,6 +20,6 @@ public class FireBlast extends DecorateurKaiju {
 
     @Override
     public void howl() {
-        System.out.println("Le kaiju se prépare a envoyer un souffle de feu et pousse un hurlement qui fait trembler la terre");
+        System.out.println("Le kaiju se prepare a envoyer un souffle de feu et pousse un hurlement qui fait trembler la terre");
     }
 }

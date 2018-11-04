@@ -107,7 +107,7 @@ public class Archipel<T extends Island> {
         {
             nbAnimals += island.getNbAnimaux();
         }
-        return "Il y a actuellement " + nbAnimals + " créatures dans le Jurassic Park.";
+        return "Il y a actuellement " + nbAnimals + " creatures dans le Jurassic Park.";
     }
 
     public int getNbAnimals(int i) {
@@ -150,20 +150,20 @@ public class Archipel<T extends Island> {
     }
 
     public static void main(String[] args) {
-        //À intervalle régulier, cette  méthode doit :
-        //modifier aléatoirement l’état de certains animaux (les rendre malades, les endormir, etc.)
-        //modifier aléatoirement l’état de certains enclos (leur propreté, leur salinité, etc.)
-        //passer la main à l'employé (et donc à l’utilisateur) pour qu'il s'occupe du zoo
-        // (son namebre d’action par intervalle de temps devant être limité)
+        //À intervalle regulier, cette  methode doit :
+        //modifier aleatoirement l’etat de certains animaux (les rendre malades, les endormir, etc.)
+        //modifier aleatoirement l’etat de certains enclos (leur proprete, leur salinite, etc.)
+        //passer la main à l'employe (et donc à l’utilisateur) pour qu'il s'occupe du zoo
+        // (son namebre d’action par intervalle de temps devant être limite)
 
 
 
-        //Lors du démarrage de l'application demande a l'utilisateur son nom
+        //Lors du demarrage de l'application demande a l'utilisateur son nom
         Scanner in = new Scanner(System.in);
         System.out.println("Entrez votre nom => ");
         String employee_name = in.next();
         while (!(employee_name instanceof String)) {
-            System.out.println("Veuillez écrire votre nom => ");
+            System.out.println("Veuillez ecrire votre nom => ");
             employee_name = in.next();
         }
 
@@ -171,7 +171,7 @@ public class Archipel<T extends Island> {
         System.out.println("Êtes-vous un homme (M) ou une femme (F) => ");
         char employee_gender = toLowerCase(in.next().charAt(0));
         while (employee_gender != 'm' && employee_gender != 'f') {
-            System.out.println("Veuillez répondre par M ou F => ");
+            System.out.println("Veuillez repondre par M ou F => ");
             employee_gender = in.next().charAt(0);
         }
 
@@ -184,19 +184,19 @@ public class Archipel<T extends Island> {
             employee_age = in.nextInt();
         }
 
-        // on défini un employé à partir de ces infos
+        // on defini un employe à partir de ces infos
         Employee employe_jurassic = new Employee(employee_name, employee_gender, employee_age);
 
-        //Création du zoo (archipel)
+        //Creation du zoo (archipel)
         Archipel jurassicIsland = new Archipel("Jurassic Park Land", employe_jurassic, 20, 0, new ArrayList<Island>());
 
-        //Création de toutes nos îles
+        //Creation de toutes nos îles
         Island herbiLand = new HerbivorousIsland("HerbiLand", 100000, 100, 0, "Bon", null);
         Island t_rexLand = new CarnivorousLand("T-rexLand", 10000, 10, 0, "Bon", null);
         Island compsoLand = new CarnivorousLand("CompsoLand", 1000, 150, 0, "Bon", null);
-        Island ceratoLand = new CarnivorousLand("CératoLand", 12500, 20, 0, "Bon", null);
-        Island veloLand = new CarnivorousLand("VéloLand", 5000, 100, 0, "Bon", null);
-        Island pteraLand = new PteraLand("PtéraLand", 10000, 140, 0, "Bon", null, 100);
+        Island ceratoLand = new CarnivorousLand("CeratoLand", 12500, 20, 0, "Bon", null);
+        Island veloLand = new CarnivorousLand("VeloLand", 5000, 100, 0, "Bon", null);
+        Island pteraLand = new PteraLand("PteraLand", 10000, 140, 0, "Bon", null, 100);
         Island spinoLand = new SpinoLand("SpinoLand", 1000, 10, 0, "Bon", null, 500);
         Island godzilLand = new KaijuIsland("GodzilLand", 3000, 1, 0, "Bon", null);
         Island kaijuLand = new KaijuIsland("KaijuLand", 10000, 3, 0, "Bon", null);
@@ -215,12 +215,12 @@ public class Archipel<T extends Island> {
         jurassicIsland.addIsland(transferIsland);
 
         System.out.println("Bonjour " + employe_jurassic.getName() + ", bienvenue dans le Jurassic Park Land.\n" +
-                "Vous êtes l'employé d'un Zoo d'un nouveau genre, ici pas d'animaux communs mais bel et bien des dinosaures comme au bon vieux temps.\n" +
-                "Mais en plus de ces dinosaures, nous avons décidés d'heberger également des Kaiju et leur copain Godzilla.\n" +
-                "Tout au long de votre contrat, des actions vous seront proposé, mais vous ne disposez que de 10 actions avant de pouvoir vous reposer.\n" +
+                "Vous êtes l'employe d'un Zoo d'un nouveau genre, ici pas d'animaux communs mais bel et bien des dinosaures comme au bon vieux temps.\n" +
+                "Mais en plus de ces dinosaures, nous avons decides d'heberger egalement des Kaiju et leur copain Godzilla.\n" +
+                "Tout au long de votre contrat, des actions vous seront propose, mais vous ne disposez que de 10 actions avant de pouvoir vous reposer.\n" +
                 "En effet, s'occuper de dinosaures et plus laborieux que des animaux classiques. \nFaîtes les bons choix.");
 
-        //On créé deux dinosaures de chaque espèces. Puis un seul kaiju de chaque et un Godzilla.
+        //On cree deux dinosaures de chaque espèces. Puis un seul kaiju de chaque et un Godzilla.
         Ankylosaure AnkyMale = new Ankylosaure("AnkyMale", true, 250, 6000, 8, false, false, true);
         Ankylosaure AnkyFemale = new Ankylosaure("AnkyFemale", false, 230, 5600, 9, false, false, true);
         herbiLand.addCreature(AnkyMale);
@@ -243,8 +243,8 @@ public class Archipel<T extends Island> {
         Corythosaure CoryFemale = new Corythosaure("CoryFemale", false, 130, 3500, 4, false, false, true);
         herbiLand.addCreature(CoryMale);
         herbiLand.addCreature(CoryFemale);
-        Cératosaure CeraMale = new Cératosaure("CeraMale", true, 250, 900, 8, true, false, true);
-        Cératosaure CeraFemale = new Cératosaure("CeraFemale", false, 230, 800, 9, true, false, true);
+        Ceratosaure CeraMale = new Ceratosaure("CeraMale", true, 250, 900, 8, true, false, true);
+        Ceratosaure CeraFemale = new Ceratosaure("CeraFemale", false, 230, 800, 9, true, false, true);
         ceratoLand.addCreature(CeraMale);
         ceratoLand.addCreature(CeraFemale);
         Diplodocus DiploMale = new Diplodocus("DiploMale", true, 400, 20000, 7, false, false, true);
@@ -256,30 +256,30 @@ public class Archipel<T extends Island> {
         herbiLand.addCreature(ParaMale);
         herbiLand.addCreature(ParaFemale);
 
-        //a gerer l'envergure d'un ptéranodon au lieu de la hauteur / taille
+        //a gerer l'envergure d'un pteranodon au lieu de la hauteur / taille
 
-        Ptéranodon PteraMale = new Ptéranodon("PteraMale", true, 150, 4000, 5, false, false, true);
-        Ptéranodon PteraFemale = new Ptéranodon("PteraFemale", false, 130, 3500, 4, false, false, true);
+        Pteranodon PteraMale = new Pteranodon("PteraMale", true, 150, 4000, 5, false, false, true);
+        Pteranodon PteraFemale = new Pteranodon("PteraFemale", false, 130, 3500, 4, false, false, true);
         pteraLand.addCreature(PteraMale);
         pteraLand.addCreature(PteraFemale);
         Spinosaure SpinoMale = new Spinosaure("SpinoMale", true, 380, 5800, 5, false, false, true);
         Spinosaure SpinoFemale = new Spinosaure("SpinoFemale", false, 400, 6000, 6, false, false, true);
         spinoLand.addCreature(SpinoMale);
         spinoLand.addCreature(SpinoFemale);
-        Stégosaure StegoMale = new Stégosaure("StegoMale", true, 350, 2000, 8, false, false, true);
-        Stégosaure StegoFemale = new Stégosaure("StegoFemale", false, 360, 2200, 9, false, false, true);
+        Stegosaure StegoMale = new Stegosaure("StegoMale", true, 350, 2000, 8, false, false, true);
+        Stegosaure StegoFemale = new Stegosaure("StegoFemale", false, 360, 2200, 9, false, false, true);
         herbiLand.addCreature(StegoMale);
         herbiLand.addCreature(StegoFemale);
-        Tricératops TriceMale = new Tricératops("TriceMale", true, 320, 6500, 7, false, false, true);
-        Tricératops TriceFemale = new Tricératops("TriceFemale", false, 300, 6200, 6, false, false, true);
+        Triceratops TriceMale = new Triceratops("TriceMale", true, 320, 6500, 7, false, false, true);
+        Triceratops TriceFemale = new Triceratops("TriceFemale", false, 300, 6200, 6, false, false, true);
         herbiLand.addCreature(TriceMale);
         herbiLand.addCreature(TriceFemale);
         Tyrannosaure TyraMale = new Tyrannosaure("TyraMale", true, 500, 10000, 10, true, false, true);
         Tyrannosaure TyraFemale = new Tyrannosaure("TyraFemale", false, 540, 12000, 8, true, false, true);
         t_rexLand.addCreature(TyraMale);
         t_rexLand.addCreature(TyraFemale);
-        Vélociraptor VeloMale = new Vélociraptor("VeloMale", true, 125, 15, 6, true, false, true);
-        Vélociraptor VeloFemale = new Vélociraptor("VeloFemale", false, 125, 14, 5, true, false, true);
+        Velociraptor VeloMale = new Velociraptor("VeloMale", true, 125, 15, 6, true, false, true);
+        Velociraptor VeloFemale = new Velociraptor("VeloFemale", false, 125, 14, 5, true, false, true);
         veloLand.addCreature(VeloMale);
         veloLand.addCreature(VeloFemale);
 
@@ -317,7 +317,7 @@ public class Archipel<T extends Island> {
             }
 
             if (random == 0) {
-                System.out.println("Une énorme météorite explose sur l'île principale de Jurassic Park Land détruisant tous les animaux.");
+                System.out.println("Une enorme meteorite explose sur l'île principale de Jurassic Park Land detruisant tous les animaux.");
                 return;
             } else if (random <= 15){
                 CompsoFemale.setHowlStrategy(agressivHowl);
@@ -337,14 +337,14 @@ public class Archipel<T extends Island> {
                 System.out.println("Voulez-vous le nourrir ? O / N => ");
                 response = toLowerCase(in.next().charAt(0));
                 while (response != 'o' && response != 'n') {
-                    System.out.println("Veuillez répondre par O ou N => ");
+                    System.out.println("Veuillez repondre par O ou N => ");
                     response = in.next().charAt(0);
                 }
                 if (response == 'o' && nbActionEmploye < 10) {
                     employe_jurassic.feedAnimals(laBete);
                     nbActionEmploye++;
                 } else if (nbActionEmploye > 10) {
-                    System.out.println("L'employé est fatigué et se repose.");
+                    System.out.println("L'employe est fatigue et se repose.");
                     nbActionEmploye = 0;
                 }
             } else if (random <= 60) {
@@ -356,7 +356,7 @@ public class Archipel<T extends Island> {
                 System.out.println("Voulez-vous le soigner ? O / N => ");
                 response = toLowerCase(in.next().charAt(0));
                 while (response != 'o' && response != 'n') {
-                    System.out.println("Veuillez répondre par O ou N => ");
+                    System.out.println("Veuillez repondre par O ou N => ");
                     response = in.next().charAt(0);
                 }
                 if (response == 'o' && nbActionEmploye < 10) {
@@ -365,10 +365,10 @@ public class Archipel<T extends Island> {
                 } else if (response == 'n' && nbActionEmploye < 10) {
                     laBete.setAge(laBete.getAge() + 1);
                     if (laBete.getAge() > 15) {
-                        System.out.println("La créature " + laBete.getName() + " est morte due à sa maladie.");
+                        System.out.println("La creature " + laBete.getName() + " est morte due à sa maladie.");
                     }
                 } else {
-                    System.out.println("L'employé est fatigué et doit se repose.");
+                    System.out.println("L'employe est fatigue et doit se repose.");
                     nbActionEmploye = 0;
                 }
             } else if (random <= 65) {
@@ -379,22 +379,22 @@ public class Archipel<T extends Island> {
                 laBete = jurassicIsland.getRandomCreature();
                 if (laBete.isTired() == true) {
                     laBete.setTired(false);
-                    System.out.println(laBete.getName() + " le " + laBete.getType() + " se réveille");
+                    System.out.println(laBete.getName() + " le " + laBete.getType() + " se reveille");
                 }
             } else if (random <= 80) {
                 ileAnettoyer = jurassicIsland.getRandomIsland();
-                ileAnettoyer.setPropreté("Mauvais");
-                System.out.println(ileAnettoyer.getName() + " est sale/abîmé, voulez-vous le nettoyer ? O / N =>");
+                ileAnettoyer.setProprete("Mauvais");
+                System.out.println(ileAnettoyer.getName() + " est sale/abîme, voulez-vous le nettoyer ? O / N =>");
                 response = toLowerCase(in.next().charAt(0));
                 while (response != 'o' && response != 'n') {
-                    System.out.println("Veuillez répondre par O ou N => ");
+                    System.out.println("Veuillez repondre par O ou N => ");
                     response = in.next().charAt(0);
                 }
                 if (response == 'o' && nbActionEmploye < 10) {
                     employe_jurassic.cleanIsland(ileAnettoyer, transferIsland);
                     nbActionEmploye++;
                 } else if (nbActionEmploye >= 10){
-                    System.out.println("L'employé est fatigué et doit se repose.");
+                    System.out.println("L'employe est fatigue et doit se repose.");
                     nbActionEmploye = 0;
                 }
             } else if (random <= 90) {
@@ -403,30 +403,30 @@ public class Archipel<T extends Island> {
                 if (laBete.isSex() == false) {
                     CompsoFemale.setHowlStrategy(heatHowl);
                     CompsoFemale.howl();
-                    System.out.println("La femalle " + laBete.getName() + " attend un bébé.");
+                    System.out.println("La femalle " + laBete.getName() + " attend un bebe.");
                     Egg nouvelleCreature = laBete.layEggs();
                     Creature newDino = nouvelleCreature.hatch();
                     if (newDino instanceof Herbivorous) {
                         herbiLand.addCreature(newDino);
-                        System.out.println("Félicitations aux heureux parents, l'île " + herbiLand.getName() + " a un nouveau locataire. Bienvenue à " + newDino.getName());
+                        System.out.println("Felicitations aux heureux parents, l'île " + herbiLand.getName() + " a un nouveau locataire. Bienvenue à " + newDino.getName());
                     } else if (newDino instanceof Tyrannosaure) {
                         t_rexLand.addCreature(newDino);
-                        System.out.println("Félicitations aux heureux parents, l'île " + herbiLand.getName() + " a un nouveau locataire. Bienvenue à " + newDino.getName());
-                    } else if (newDino instanceof Cératosaure) {
+                        System.out.println("Felicitations aux heureux parents, l'île " + herbiLand.getName() + " a un nouveau locataire. Bienvenue à " + newDino.getName());
+                    } else if (newDino instanceof Ceratosaure) {
                         ceratoLand.addCreature(newDino);
-                        System.out.println("Félicitations aux heureux parents, l'île " + herbiLand.getName() + " a un nouveau locataire. Bienvenue à " + newDino.getName());
+                        System.out.println("Felicitations aux heureux parents, l'île " + herbiLand.getName() + " a un nouveau locataire. Bienvenue à " + newDino.getName());
                     } else if (newDino instanceof Compsognathus) {
                         compsoLand.addCreature(newDino);
-                        System.out.println("Félicitations aux heureux parents, l'île " + herbiLand.getName() + " a un nouveau locataire. Bienvenue à " + newDino.getName());
-                    } else if (newDino instanceof Ptéranodon) {
+                        System.out.println("Felicitations aux heureux parents, l'île " + herbiLand.getName() + " a un nouveau locataire. Bienvenue à " + newDino.getName());
+                    } else if (newDino instanceof Pteranodon) {
                         pteraLand.addCreature(newDino);
-                        System.out.println("Félicitations aux heureux parents, l'île " + herbiLand.getName() + " a un nouveau locataire. Bienvenue à " + newDino.getName());
+                        System.out.println("Felicitations aux heureux parents, l'île " + herbiLand.getName() + " a un nouveau locataire. Bienvenue à " + newDino.getName());
                     } else if (newDino instanceof Spinosaure) {
                         spinoLand.addCreature(newDino);
-                        System.out.println("Félicitations aux heureux parents, l'île " + herbiLand.getName() + " a un nouveau locataire. Bienvenue à " + newDino.getName());
-                    } else if (newDino instanceof Vélociraptor) {
+                        System.out.println("Felicitations aux heureux parents, l'île " + herbiLand.getName() + " a un nouveau locataire. Bienvenue à " + newDino.getName());
+                    } else if (newDino instanceof Velociraptor) {
                         veloLand.addCreature(newDino);
-                        System.out.println("Félicitations aux heureux parents, l'île " + herbiLand.getName() + " a un nouveau locataire. Bienvenue à " + newDino.getName());
+                        System.out.println("Felicitations aux heureux parents, l'île " + herbiLand.getName() + " a un nouveau locataire. Bienvenue à " + newDino.getName());
                     }
                     System.out.println(jurassicIsland.getNbAnimals());
                 }else{
@@ -436,7 +436,7 @@ public class Archipel<T extends Island> {
             } else if (random <= 94) {
                 Godzilla.getGodzilla().move();
             } else if (random <= 99) {
-                System.out.println("Un kaiju  se déplace");
+                System.out.println("Un kaiju  se deplace");
             } else {
                 System.out.println("La purge : Godzilla et les kaijus se battent et font exploser tout le Jurassic Park Land");
                 return;

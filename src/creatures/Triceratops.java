@@ -3,15 +3,13 @@ package creatures;
 import typedinosaure.*;
 import regimealimentaire.*;
 
-import java.sql.SQLOutput;
+public class Triceratops extends Herbivorous implements Terrestrial {
 
-public class Tyrannosaure extends Carnivorous implements Terrestrial{
-
-	public Tyrannosaure() {
+	public Triceratops() {
 	}
 
-	public Tyrannosaure(String name, boolean sexe, double taille, double poids, int age, boolean faim, boolean fatigue,
-						boolean sante) {
+		public Triceratops(String name, boolean sexe, double taille, double poids, int age, boolean faim, boolean fatigue,
+			boolean sante) {
 		super(name, sexe, taille, poids, age, faim, fatigue, sante);
 		// TODO Auto-generated constructor stub
 	}
@@ -19,10 +17,11 @@ public class Tyrannosaure extends Carnivorous implements Terrestrial{
 	@Override
 	public Egg layEggs() {
 		int i = 1;
-		Tyrannosaure son = new Tyrannosaure("TyrannosaureChild" + i, getRandomBoolean(), 10,10,0, true, true, true);
-		++i;
+		Triceratops son = new Triceratops("TriceratopsChild" + i, getRandomBoolean(), 10,10,0, true, true, true);
+		i++;
 		return new Egg(10, son);
 	}
+
 	@Override
 	public void move() {
 		System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " marche");

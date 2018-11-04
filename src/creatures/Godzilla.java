@@ -5,7 +5,7 @@ import regimealimentaire.*;
 
 public final class Godzilla extends Kaiju implements Terrestrial, Marine{
 
-	private static volatile Godzilla godzilla = null; //volatile pour gérer les thread
+	private static volatile Godzilla godzilla = null; //volatile pour gerer les thread
 	
 	public static Godzilla getGodzilla() {
 		if(godzilla == null) {
@@ -24,7 +24,7 @@ public final class Godzilla extends Kaiju implements Terrestrial, Marine{
 		this.setHungry(false);
 		this.setTired(false);
 		this.setHealth(false);
-	} //Contructeur privé pour le singleton 
+	} //Contructeur prive pour le singleton
 	
 	@Override
 	public void move() {
@@ -33,7 +33,7 @@ public final class Godzilla extends Kaiju implements Terrestrial, Marine{
 
 
 	public void howl (){
-		System.out.println("La créature " + this.getName() + " pousse un cri");
+		System.out.println("La creature " + this.getName() + " pousse un cri");
 	}
 
 	@Override

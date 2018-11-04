@@ -20,6 +20,6 @@ public class RadioactivBlast extends DecorateurKaiju {
 
     @Override
     public void howl() {
-        System.out.println("Le kaiju se prépare a utiliser son rayon et pousse un hurlement qui fait trembler la terre");
+        System.out.println("Le kaiju se prepare a utiliser son rayon et pousse un hurlement qui fait trembler la terre");
     }
 }

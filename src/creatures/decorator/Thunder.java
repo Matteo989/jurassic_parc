@@ -21,6 +21,6 @@ public class Thunder extends DecorateurKaiju {
 
     @Override
     public void howl() {
-        System.out.println("Le kaiju fait appel a la puisance des éléments et pousse un hurlement qui fait trembler la terre");
+        System.out.println("Le kaiju fait appel a la puisance des elements et pousse un hurlement qui fait trembler la terre");
     }
 }

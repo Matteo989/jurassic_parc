@@ -15,7 +15,7 @@ public abstract class Herbivorous extends Dinosaur {
         if(!this.isTired() && this.isHungry()) {
             System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " mange de l'herbe (et je ne parle pas de cannabis mdr).");
             this.setHungry(false);
-            System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " a bien mangé.");
+            System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " a bien mange.");
         } else if (this.isTired()) {
             System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " est endormi et ne peut pas manger.");
         } else {

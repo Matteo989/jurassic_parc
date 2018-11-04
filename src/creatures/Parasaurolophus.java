@@ -9,8 +9,8 @@ public class Parasaurolophus extends Herbivorous implements Terrestrial {
 	}
 
 		public Parasaurolophus(String name, boolean sexe, double taille, double poids, int age, boolean faim,
-			boolean fatigue, boolean santé) {
-		super(name, sexe, taille, poids, age, faim, fatigue, santé);
+			boolean fatigue, boolean sante) {
+		super(name, sexe, taille, poids, age, faim, fatigue, sante);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -28,6 +28,6 @@ public class Parasaurolophus extends Herbivorous implements Terrestrial {
 	}
 
 	public void howl (){
-		System.out.println("La créature " + this.getName() + " pousse un cri");
+		System.out.println("La creature " + this.getName() + " pousse un cri");
 	}
 }

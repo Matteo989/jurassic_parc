@@ -3,14 +3,14 @@ package creatures;
 import typedinosaure.*;
 import regimealimentaire.*;
 
-public class Ptéranodon extends Omnivorous implements Flying{
+public class Pteranodon extends Omnivorous implements Flying{
 
-	public Ptéranodon() {
+	public Pteranodon() {
 	}
 
-		public Ptéranodon(String name, boolean sexe, double taille, double poids, int age, boolean faim, boolean fatigue,
-			boolean santé) {
-		super(name, sexe, taille, poids, age, faim, fatigue, santé);
+		public Pteranodon(String name, boolean sexe, double taille, double poids, int age, boolean faim, boolean fatigue,
+			boolean sante) {
+		super(name, sexe, taille, poids, age, faim, fatigue, sante);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -22,7 +22,7 @@ public class Ptéranodon extends Omnivorous implements Flying{
 	@Override
 	public Egg layEggs() {
 		int i = 1;
-		Ptéranodon son = new Ptéranodon("PtéranodonChild" +i, getRandomBoolean(), 10,10,0, true, true, true);
+		Pteranodon son = new Pteranodon("PteranodonChild" +i, getRandomBoolean(), 10,10,0, true, true, true);
 		i++;
 		return new Egg(10, son);
 	}
@@ -32,7 +32,7 @@ public class Ptéranodon extends Omnivorous implements Flying{
 		if(!this.isTired() && this.isHungry()) {
 			System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " mange du poisson et de la viande.");
 			this.setHungry(false);
-			System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " a bien mangé.");
+			System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " a bien mange.");
 			this.setTired(true);
 		} else if (this.isTired()) {
 			System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " est endormi.");
@@ -42,7 +42,7 @@ public class Ptéranodon extends Omnivorous implements Flying{
 	}
 
 	public void howl (){
-		System.out.println("La créature " + this.getName() + " pousse un cri");
+		System.out.println("La creature " + this.getName() + " pousse un cri");
 	}
 
 }

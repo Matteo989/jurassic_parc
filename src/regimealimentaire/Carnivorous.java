@@ -15,7 +15,7 @@ public abstract class Carnivorous extends Dinosaur {
         if(!this.isTired() && this.isHungry()) {
             System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " mange de la viande.");
             this.setHungry(false);
-            System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " a bien mangé.");
+            System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " a bien mange.");
         } else if (this.isTired()) {
             System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " est endormi et ne peut pas manger.");
         } else {

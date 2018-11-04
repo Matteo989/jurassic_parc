@@ -6,8 +6,8 @@ import java.util.ArrayList;
 
 public class KaijuIsland<T> extends Island<T> {
 
-    public KaijuIsland(String name, int area, int animauxMax, int nbAnimaux, String propreté, ArrayList creatures) {
-        super(name, area, animauxMax, nbAnimaux, propreté, creatures);
+    public KaijuIsland(String name, int area, int animauxMax, int nbAnimaux, String proprete, ArrayList creatures) {
+        super(name, area, animauxMax, nbAnimaux, proprete, creatures);
     }
 
     @Override
@@ -17,10 +17,10 @@ public class KaijuIsland<T> extends Island<T> {
                 this.getCreatures().add(creature);
                 this.setNbAnimaux(getNbAnimaux() + 1);
             } else {
-                System.out.println(creature.toString() + "ne peut pas être ajouté a l'ile");
+                System.out.println(creature.toString() + "ne peut pas être ajoute a l'ile");
             }
         } else {
-            System.out.println("Le nombre maximum d'animaux à été atteint.");
+            System.out.println("Le nombre maximum d'animaux à ete atteint.");
         }
     }
 

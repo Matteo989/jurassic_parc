@@ -29,6 +29,6 @@ public class Corythosaure extends Herbivorous implements Terrestrial {
 	}
 
 	public void howl (){
-		System.out.println("La créature " + this.getName() + " pousse un cri");
+		System.out.println("La creature " + this.getName() + " pousse un cri");
 	}
 }
