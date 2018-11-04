@@ -2,9 +2,11 @@ package creatures.meute.strategy;
 
 import creatures.meute.Compsognathus;
 
-public class BasicHowl implements HowlStrategy {
+public class SubmissionHowlStrategy implements HowlStrategy {
+
     @Override
     public void howl(Compsognathus compsognathus) {
-        System.out.println("Le compsognatus hurle");
+        System.out.println("Le compsognatus exprime sa soumission");
     }
 }
+

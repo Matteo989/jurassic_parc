@@ -27,13 +27,13 @@ public final class Godzilla extends Kaiju implements Terrestrial, Marine{
 	} //Contructeur privé pour le singleton 
 	
 	@Override
-	public void nager() {
-		System.out.println(this.getName() + " nage");
+	public void move() {
+		System.out.println(this.getName() + " marche et nage");
 	}
 
-	@Override
-	public void walk() {
-		System.out.println(this.getName() + " marche");
+
+	public void howl (){
+		System.out.println("La créature " + this.getName() + " pousse un cri");
 	}
 
 	@Override

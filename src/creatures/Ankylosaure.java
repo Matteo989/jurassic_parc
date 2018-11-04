@@ -23,7 +23,12 @@ public class Ankylosaure extends Herbivorous implements Terrestrial {
 	}
 
 	@Override
-	public void walk() {
+	public void move() {
 		System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " marche");
 	}
+
+    public void howl (){
+        System.out.println("La créature " + this.getName() + " pousse un cri");
+    }
+
 }

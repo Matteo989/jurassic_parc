@@ -29,13 +29,13 @@ public class Ghidorah extends Kaiju implements Flying, Terrestrial {
 	} //Contructeur privé pour le singleton 
 	
 	@Override
-	public void walk() {
-		System.out.println(this.getName() + " marche");
+	public void move() {
+		System.out.println(this.getName() + " marche et vole");
 	}
 
-	@Override
-	public void fly() {
-		System.out.println(this.getName() + " vole");
+
+	public void howl (){
+		System.out.println("La créature " + this.getName() + " pousse un cri");
 	}
 
 	@Override

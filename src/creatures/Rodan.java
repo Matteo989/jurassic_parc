@@ -28,10 +28,13 @@ public class Rodan extends Kaiju implements Flying{
 	
 	
 	@Override
-	public void fly() {
+	public void move() {
 		System.out.println(this.getName() + " vole");
 	}
 
+	public void howl (){
+		System.out.println("La créature " + this.getName() + " pousse un cri");
+	}
 	@Override
 	public Egg layEggs() {
 		return null;

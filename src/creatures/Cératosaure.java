@@ -24,7 +24,7 @@ public class Cératosaure extends Carnivorous implements Terrestrial {
 	}
 
 	@Override
-	public void walk() {
+	public void move() {
 		System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " marche");
 	}
 

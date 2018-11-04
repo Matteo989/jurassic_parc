@@ -15,7 +15,7 @@ public class Ptéranodon extends Omnivorous implements Flying{
 	}
 
 	@Override
-	public void fly() {
+	public void move() {
 		System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " vole");
 	}
 
@@ -39,6 +39,10 @@ public class Ptéranodon extends Omnivorous implements Flying{
 		} else {
 			System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " n'a pas faim.");
 		}
+	}
+
+	public void howl (){
+		System.out.println("La créature " + this.getName() + " pousse un cri");
 	}
 
 }

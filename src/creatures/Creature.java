@@ -102,6 +102,8 @@ public abstract class Creature {
         return this.getClass().getSuperclass().getSuperclass().getSimpleName();
     }
 
+    public abstract void move();
+    public abstract void howl();
     @Override
     public String toString() {
         return this.getCreatureType() + "={" +

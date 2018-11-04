@@ -1,11 +1,12 @@
 package archipel;
 
 import creatures.meute.Compsognathus;
+import creatures.meute.Pack;
+import creatures.meute.strategy.*;
 import islands.*;
 import employees.*;
 import creatures.*;
 import regimealimentaire.*;
-import typedinosaure.*;
 
 
 import java.util.ArrayList;
@@ -173,6 +174,7 @@ public class Archipel<T extends Island> {
         }
 
         // son age
+
         System.out.println("Entrez votre age => ");
         int employee_age = in.nextInt();
         while (!(employee_age>0 && employee_age<100)) {
@@ -221,8 +223,14 @@ public class Archipel<T extends Island> {
         Brachiosaure BrachioFemale = new Brachiosaure("BrachioFemale", false, 1350, 60000, 11, false, false, true);
         herbiLand.addCreature(BrachioMale);
         herbiLand.addCreature(BrachioFemale);
-        Compsognathus CompsoMale = new Compsognathus("CompsoMale", true, 25, 2, 5, false, false, true, 10, 10, 10, 10, 10, null);
-        Compsognathus CompsoFemale = new Compsognathus("CompsoFemale", false, 25, 2, 4, false, false, true, 10, 10, 10, 10, 10, null);
+        Pack meute = new Pack("Meute de compsognathus");
+        HowlStrategy basicHowl = new BasicHowlStrategy();
+        HowlStrategy agressivHowl = new AgressivHowlStrategy();
+        HowlStrategy heatHowl = new HeatHowlStrategy();
+        HowlStrategy submissionHowl = new SubmissionHowlStrategy();
+        HowlStrategy dominanceHowl = new DominanceHowlStrategy();
+        Compsognathus CompsoMale = new Compsognathus("CompsoMale", true, 25, 2, 5, false, false, true, 10, 10, 'a', 10, 10, meute, basicHowl );
+        Compsognathus CompsoFemale = new Compsognathus("CompsoFemale", false, 25, 2, 4, false, false, true, 10, 10, 'a', 10, 10, meute, basicHowl);
         compsoLand.addCreature(CompsoMale);
         compsoLand.addCreature(CompsoFemale);
         Corythosaure CoryMale = new Corythosaure("CoryMale", true, 150, 4000, 5, false, false, true);
@@ -269,10 +277,14 @@ public class Archipel<T extends Island> {
         veloLand.addCreature(VeloMale);
         veloLand.addCreature(VeloFemale);
 
-        godzilLand.addCreature(Godzilla.getGodzilla());
-        kaijuLand.addCreature(Ghidorah.getGhidorah());
-        kaijuLand.addCreature(Mithra.getMithra());
-        kaijuLand.addCreature(Rodan.getRodan());
+        Godzilla godzilla = Godzilla.getGodzilla();
+        godzilLand.addCreature(godzilla);
+        Ghidorah ghidorah = Ghidorah.getGhidorah();
+        kaijuLand.addCreature(ghidorah);
+        Mithra mithra = Mithra.getMithra();
+        kaijuLand.addCreature(mithra);
+        Rodan rodan = Rodan.getRodan();
+        kaijuLand.addCreature(rodan);
 
         //Pour afficher le nombre d'animaux.
         System.out.println(jurassicIsland.getNbAnimals());
@@ -295,10 +307,17 @@ public class Archipel<T extends Island> {
                 System.out.println("Une énorme météorite explose sur l'île principale de Jurassic Park Land détruisant tous les animaux.");
                 return;
             } else if (random <= 15){
-                System.out.println("Un animal se déplace.");
+                CompsoFemale.setHowlStrategy(agressivHowl);
+                CompsoMale.setHowlStrategy(agressivHowl);
+                laBete = jurassicIsland.getRandomCreature();
+                laBete.move();
             } else if (random <= 30) {
-                System.out.println("Un animal crie");
+                laBete = jurassicIsland.getRandomCreature();
+                laBete.howl();
+
             } else if (random <= 50) {
+                CompsoFemale.setHowlStrategy(dominanceHowl);
+                CompsoMale.setHowlStrategy(submissionHowl);
                 laBete = jurassicIsland.getRandomCreature();
                 laBete.setHungry(true);
                 System.out.println(laBete.getName() + " le " + laBete.getType() + " a faim.");
@@ -316,6 +335,8 @@ public class Archipel<T extends Island> {
                     nbActionEmploye = 0;
                 }
             } else if (random <= 60) {
+                CompsoFemale.setHowlStrategy(basicHowl);
+                CompsoMale.setHowlStrategy(basicHowl);
                 laBete = jurassicIsland.getRandomCreature();
                 laBete.setHealth(false);
                 System.out.println(laBete.getName() + " le " + laBete.getType() + " est malade.");
@@ -351,8 +372,11 @@ public class Archipel<T extends Island> {
                 System.out.println(ileAnettoyer.getName() + " est sale/abîmé");
             } else if (random <= 90) {
                 laBete = jurassicIsland.getRandomCreature();
+
                 if (laBete.isSex() == false) {
-                    System.out.println("La femelle " + laBete.getName() + " attend un bébé.");
+                    CompsoFemale.setHowlStrategy(heatHowl);
+                    CompsoFemale.howl();
+                    System.out.println("La femalle " + laBete.getName() + " attend un bébé.");
                     Egg nouvelleCreature = laBete.layEggs();
                     Creature newDino = nouvelleCreature.hatch();
                     if (newDino instanceof Herbivorous) {
@@ -378,9 +402,12 @@ public class Archipel<T extends Island> {
                         System.out.println("Félicitations aux heureux parents, l'île " + herbiLand.getName() + " a un nouveau locataire. Bienvenue à " + newDino.getName());
                     }
                     System.out.println(jurassicIsland.getNbAnimals());
+                }else{
+                    CompsoMale.setHowlStrategy(heatHowl);
+                    CompsoMale.howl();
                 }
             } else if (random <= 94) {
-                Godzilla.getGodzilla().walk();
+                Godzilla.getGodzilla().move();
             } else if (random <= 99) {
                 System.out.println("Un kaiju  se déplace");
             } else {

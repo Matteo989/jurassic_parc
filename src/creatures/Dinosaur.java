@@ -43,4 +43,9 @@ public abstract class Dinosaur extends Creature {
             System.out.println(this.getName() + " le " + this.getType().toLowerCase() + " n'est pas fatigué.");
         }
     }
+
+
+    public void howl (){
+        System.out.println("La créature " + this.getName() + " pousse un cri");
+    }
 }
