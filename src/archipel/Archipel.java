@@ -146,6 +146,7 @@ public class Archipel<T extends Island> {
         //passer la main à l'employé (et donc à l’utilisateur) pour qu'il s'occupe du zoo
         // (son namebre d’action par intervalle de temps devant être limité)
 
+
         //Lors du démarrage de l'application demande a l'utilisateur son nom
         Scanner in = new Scanner(System.in);
         System.out.println("Entrez votre nom => ");
@@ -277,6 +278,7 @@ public class Archipel<T extends Island> {
         while (i != 100) {
             Creature laBete = null;
             Island ileAnettoyer = null;
+            char response = ' ';
             int random = (int)(Math.random() * (higher-lower)) + lower;
             System.out.println(i);
             if (random == 0) {
@@ -290,10 +292,28 @@ public class Archipel<T extends Island> {
                 laBete = jurassicIsland.getRandomCreature();
                 laBete.setHungry(true);
                 System.out.println(laBete.getName() + " le " + laBete.getType() + " a faim.");
+                System.out.println("Voulez-vous le nourrir ? O / N => ");
+                response = Character.toLowerCase(in.next().charAt(0));
+                while (response != 'o' && response != 'n') {
+                    System.out.println("Veuillez répondre par O ou N => ");
+                    response = in.next().charAt(0);
+                }
+                if (response == 'o') {
+                    employe_jurassic.feedAnimals(laBete);
+                }
             } else if (random <= 60) {
                 laBete = jurassicIsland.getRandomCreature();
                 laBete.setHealth(false);
                 System.out.println(laBete.getName() + " le " + laBete.getType() + " est malade.");
+                System.out.println("Voulez-vous le soigner ? O / N => ");
+                response = Character.toLowerCase(in.next().charAt(0));
+                while (response != 'o' && response != 'n') {
+                    System.out.println("Veuillez répondre par O ou N => ");
+                    response = in.next().charAt(0);
+                }
+                if (response == 'o') {
+                    employe_jurassic.healAnimals(laBete);
+                }
             } else if (random <= 65) {
                 laBete = jurassicIsland.getRandomCreature();
                 laBete.setTired(true);
@@ -307,7 +327,10 @@ public class Archipel<T extends Island> {
                 ileAnettoyer.setPropreté("Mauvais");
                 System.out.println(ileAnettoyer.getName() + " est sale/abîmé");
             } else if (random <= 90) {
-                System.out.println("Un couple d'animaux a copulé et la femelle est enceinte");
+                laBete = jurassicIsland.getRandomCreature();
+                if (laBete.isSex() == false) {
+                    System.out.println("La femelle " + laBete.getName() + " attend un bébé.");
+                }
             } else if (random <= 94) {
                 Godzilla.getGodzilla().walk();
             } else if (random <= 99) {

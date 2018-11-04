@@ -1,5 +1,6 @@
 package employees;
 
+import creatures.Creature;
 import islands.HerbivorousIsland;
 import islands.Island;
 import islands.TransferIsland;
@@ -72,10 +73,18 @@ public class Employee {
         }
     }
 
-//    public void feedAnimals(Island island) {
-//        //boucle for pour tous les nourrir
-//    }
-//
+    public void feedAnimals(Creature creature) {
+        System.out.println("L'employé commence a nourrir " + creature.getName());
+        creature.setHungry(false);
+        System.out.println(creature.getName() + " a bien mangé");
+    }
+
+    public void healAnimals(Creature creature) {
+        System.out.println("L'employé commence a soigner " + creature.getName());
+        creature.setHealth(true);
+        System.out.println(creature.getName() + " est de nouveau en bonne santé.");
+    }
+
     public void moveAnimal(Island pastIsland, Island newIsland) {
 
     }
