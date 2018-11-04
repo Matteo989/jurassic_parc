@@ -1,4 +1,6 @@
 package creatures.meute;
+import creatures.Ankylosaure;
+import creatures.Egg;
 import typedinosaure.*;
 import regimealimentaire.*;
 
@@ -42,6 +44,11 @@ public class Compsognathus extends Carnivorous implements Terrestrial {
 
 
 
+	@Override
+	public Egg layEggs() {
+		Compsognathus son = new Compsognathus("CompsognathusSon", getRandomBoolean(), 10,10,10, true, true, true,10,10,10,10,10,this.pack);
+		return new Egg(10, son);
+	}
 
     public void setHowlStrategy(HowlStrategy howlStrategy) {
         this.howlStrategy = howlStrategy;
